@@ -2,14 +2,14 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import { Subject } from './subject.schema';
 
-export type GradeDocument = Grade & Document;
+export type ReportCardDocument = ReportCard & Document;
 
 @Schema()
-export class Grade {
+export class ReportCard {
   @Prop()
   subject: Subject;
   @Prop()
-  grade: number;
+  final_grade: number;
 }
 
-export const GradeSchema = SchemaFactory.createForClass(Grade);
+export const ReportCardSchema = SchemaFactory.createForClass(ReportCard);

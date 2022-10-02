@@ -6,6 +6,7 @@ import {
   Request,
   UseGuards,
   Param,
+  Put,
 } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { Roles } from '../roles/roles.decorator';
@@ -49,7 +50,18 @@ export class UsersController {
   @Roles(Role.Admin)
   @Get('/:id')
   getUserById(@Param() param) {
-    return this.usersService.getUserById(param);
+    return this.usersService.getUserById(param.id);
+  }
+
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles(Role.Admin, Role.Faculty)
+  @Put('/:student_id/:subject_id')
+  updateGrade(@Param() param, @Body() body) {
+    return this.usersService.updateGrade(
+      param.student_id,
+      param.subject_id,
+      body
+    );
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)

@@ -24,9 +24,11 @@ export class UsersService {
   }
 
   async getUserById(id) {
-    const user = await this.userModel.findById({
-      _id: id,
-    });
+    const user = await this.userModel
+      .findById({
+        _id: id,
+      })
+      .select(['-password']);
 
     return user;
   }
@@ -47,6 +49,36 @@ export class UsersService {
         section_id: section._id.toString(),
       });
     }
+  }
+
+  async addSubject(id, subject) {
+    return await this.userModel.findByIdAndUpdate(
+      { _id: id },
+      {
+        $push: {
+          'student.report_card': { subject: subject, final_grade: 0 },
+        },
+      }
+    );
+  }
+
+  async updateGrade(student_id, subject_id, body) {
+    const user = await this.getUserById(student_id);
+
+    const subj_index = user.student.report_card.findIndex((report_card) => {
+      return report_card.subject._id.toString() == subject_id;
+    });
+
+    const patchedUser = user.student;
+
+    patchedUser.report_card[subj_index].final_grade = body.grade;
+
+    return await this.userModel.findByIdAndUpdate(
+      { _id: student_id },
+      {
+        student: patchedUser,
+      }
+    );
   }
 
   async createUser(body): Promise<User> {

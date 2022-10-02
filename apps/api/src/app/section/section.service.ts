@@ -32,7 +32,7 @@ export class SectionService {
       });
     });
 
-    const newSection = await this.sectionModel.create({
+    const parsedSection = await this.sectionModel.create({
       _id: new Types.ObjectId(),
       section_name: body.section_name,
       teacher_id: body.teacher_id,
@@ -40,29 +40,57 @@ export class SectionService {
       school_year: body.school_year,
     });
 
-    if (newSection) {
+    if (parsedSection) {
       body.students_id.map((id) =>
-        this.usersService.assignSectionToUser('student', newSection, id)
+        this.usersService.assignSectionToUser('student', parsedSection, id)
       );
       this.usersService.assignSectionToUser(
         'faculty',
-        newSection,
+        parsedSection,
         body.teacher_id
       );
     }
 
-    return newSection;
+    return parsedSection;
   }
 
   async addSubjectToSection(section_id, subject_id) {
     const subject = await this.subjectService.getSubject(subject_id);
+    const section = await this.getSection(section_id);
+    section.students_id.map(async (id) => {
+      await this.usersService.addSubject(id, subject);
+    });
 
-    return await this.sectionModel.findByIdAndUpdate(
+    await this.sectionModel.findByIdAndUpdate(
       { _id: section_id },
       {
-        $push: { subjects: subject },
+        $push: {
+          subjects: subject,
+        },
       }
     );
+  }
+
+  async getParsedSection(id) {
+    const originSection = await this.getSection(id);
+    const parsedSection = Object.entries(originSection)[2][1];
+    const faculty = await this.usersService.getUserById(
+      originSection.teacher_id
+    );
+    const promisedStudents = [];
+    await originSection.students_id.map((id) =>
+      promisedStudents.push(this.usersService.getUserById(id))
+    );
+
+    delete parsedSection.students_id;
+    delete parsedSection.teacher_id;
+
+    parsedSection['teacher'] = faculty;
+
+    return Promise.all(promisedStudents).then((students) => {
+      parsedSection['students'] = students;
+      return parsedSection;
+    });
   }
 
   //   async getAllClass(): Promise<Class> {

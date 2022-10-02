@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import { Grade } from './grades.schema';
+import { ReportCard } from './reportCard.schema';
 
 export type StudentDocument = Student & Document;
 
@@ -9,7 +9,7 @@ export class Student {
   @Prop()
   strand: string;
   @Prop()
-  report_card: Grade[];
+  report_card: ReportCard[];
 }
 
 export const StudentSchema = SchemaFactory.createForClass(Student);
