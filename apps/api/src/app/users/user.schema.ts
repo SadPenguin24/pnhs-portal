@@ -3,6 +3,7 @@ import { Document, Schema as MongooseSchema } from 'mongoose';
 import { Role } from '../roles/role.enum';
 import { Faculty } from '../schema/faculty.schema';
 import { Student } from '../schema/student.schema';
+import { Profile } from '../schema/profile';
 export type UserDocument = User & Document;
 
 @Schema({ timestamps: true })
@@ -27,6 +28,8 @@ export class User {
   faculty: Faculty;
   @Prop()
   student: Student;
+  @Prop()
+  profile: Profile;
   @Prop()
   section_id: string;
 }

@@ -3,12 +3,14 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model, Types } from 'mongoose';
 import { User, UserDocument } from './user.schema';
 import * as bcrypt from 'bcrypt';
+import { EnrolleeService } from '../enrollees/enrollees.service';
 
 @Injectable()
 export class UsersService {
   constructor(
     @InjectModel('users')
-    private userModel: Model<UserDocument>
+    private userModel: Model<UserDocument>,
+    private readonly enrolleeService: EnrolleeService
   ) {}
 
   async getUser(username): Promise<User> {
@@ -60,6 +62,47 @@ export class UsersService {
         },
       }
     );
+  }
+
+  async convertEtoS(id) {
+    const enrollee = await this.enrolleeService.getEnrolleeById(id);
+    const {
+      _id,
+      first_name,
+      middle_name,
+      last_name,
+      email,
+      password,
+      address,
+      phone_number,
+      birth_certificate,
+      picture_2x2,
+      grade_10_card,
+      lrn,
+      good_moral,
+      strand,
+    } = enrollee;
+
+    return await this.userModel.create({
+      _id: _id,
+      first_name: first_name,
+      middle_name: middle_name,
+      last_name: last_name,
+      email: email,
+      password: password,
+      student: { strand: strand },
+      profile: {
+        address: address,
+        phone_number: phone_number,
+        birth_certificate: birth_certificate,
+        picture_2x2: picture_2x2,
+        grade_10_card: grade_10_card,
+        lrn: lrn,
+        good_moral: good_moral,
+      },
+    });
+
+    return enrollee;
   }
 
   async updateGrade(student_id, subject_id, body) {

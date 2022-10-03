@@ -64,6 +64,13 @@ export class UsersController {
     );
   }
 
+  // @UseGuards(JwtAuthGuard, RolesGuard)
+  // @Roles(Role.Admin)
+  @Post('/etos/:id')
+  convertEtoS(@Param() param) {
+    return this.usersService.convertEtoS(param.id);
+  }
+
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(Role.Admin)
   @Get('/')
