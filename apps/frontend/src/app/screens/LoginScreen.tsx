@@ -1,3 +1,10 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAppDispatch } from '../redux/store';
+import { setCookie } from 'cookies-next';
+
+import { setCredentials } from '../redux/slice/authSlice';
+
 import {
   Box,
   Avatar,
@@ -10,23 +17,37 @@ import {
   Link,
 } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { useLoginUserMutation } from '../redux/api/authApi';
+import { useLoginMutation } from '../redux/slice/authApiSlice.js';
 
 function LoginScreen() {
-  const [loginUser, { isLoading, error, isSuccess }] = useLoginUserMutation();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const [login] = useLoginMutation();
+  const dispatch = useAppDispatch();
+
+  const navigate = useNavigate();
 
   const onSubmitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log('EMAIL: ', data.get('email'));
-    console.log('PASSWORDss: ', data.get('password'));
+    console.log('EMAIL: ', email);
+    console.log('PASSWORDss: ', password);
 
-    //console.log('login handler: ', data);
-    const access_token = await loginUser({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-    console.log('TOKEN!: ', JSON.stringify(access_token));
+    try {
+      const { user, access_token } = await login({ email, password }).unwrap();
+      dispatch(setCredentials({ user, access_token }));
+      setCookie('access_token', access_token, {
+        sameSite: 'strict',
+      });
+      console.log('process.env.NEXT_PUBLIC_COOKIE_TIME: ', access_token, {
+        sameSite: 'strict',
+      });
+      setEmail('');
+      setPassword('');
+      navigate('/');
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -61,6 +82,7 @@ function LoginScreen() {
           name="email"
           autoComplete="email"
           autoFocus
+          onChange={(e) => setEmail(e.target.value)}
         />
         <TextField
           margin="normal"
@@ -71,6 +93,7 @@ function LoginScreen() {
           type="password"
           id="password"
           autoComplete="current-password"
+          onChange={(e) => setPassword(e.target.value)}
         />
         <FormControlLabel
           control={<Checkbox value="remember" color="primary" />}

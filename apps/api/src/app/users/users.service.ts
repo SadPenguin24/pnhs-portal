@@ -20,7 +20,7 @@ export class UsersService {
   }
 
   async getAllUser() {
-    const user = await this.userModel.find({});
+    const user = await this.userModel.find({}).select(['-password']);
 
     return user;
   }
@@ -142,7 +142,7 @@ export class UsersService {
       });
 
       if (existUser) {
-        console.log('Admin Exists');
+        console.log('User Exists');
       } else {
         const hashPass = await bcrypt.hash(password, 10);
 

@@ -1,7 +1,7 @@
 import { Injectable, NotAcceptableException } from '@nestjs/common';
 import { UsersService } from '../users/users.service';
 import { JwtService } from '@nestjs/jwt';
-import * as cookie from 'cookie';
+import { setCookie } from 'cookies-next';
 
 import * as bcrypt from 'bcrypt';
 
@@ -36,8 +36,12 @@ export class AuthService {
       role: user.role,
     };
 
+    const access_token = this.jwtService.sign(payload);
+    const fUser = await this.usersService.getUserById(user._id);
+
     return {
-      access_token: this.jwtService.sign(payload),
+      user: fUser,
+      access_token: access_token,
     };
   }
 }
