@@ -5,19 +5,9 @@ import { setCookie } from 'cookies-next';
 
 import { setCredentials } from '../redux/slice/authSlice';
 
-import {
-  Box,
-  Avatar,
-  Typography,
-  TextField,
-  FormControlLabel,
-  Checkbox,
-  Button,
-  Grid,
-  Link,
-} from '@mui/material';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { useLoginMutation } from '../redux/slice/authApiSlice.js';
+
+import '../styles/login.scss';
 
 function LoginScreen() {
   const [email, setEmail] = useState('');
@@ -51,76 +41,33 @@ function LoginScreen() {
   };
 
   return (
-    <Box
-      sx={{
-        my: 8,
-        mx: 50,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}
-      maxWidth="xs"
-    >
-      <Avatar sx={{ m: 1, bgcolor: '#388e3c' }}>
-        <LockOutlinedIcon />
-      </Avatar>
-      <Typography component="h1" variant="h5">
-        Sign In
-      </Typography>
-      <Box
-        component="form"
-        sx={{ mt: 1 }}
-        onSubmit={onSubmitHandler}
-        noValidate
-      >
-        <TextField
-          margin="normal"
-          required
-          fullWidth
-          id="email"
-          label="Email Address"
-          name="email"
-          autoComplete="email"
-          autoFocus
-          onChange={(e) => setEmail(e.target.value)}
+    <div className="wrap-center">
+      <div className="child-center">
+        <img
+          className="image"
+          src="../../assets/images/pnhs-logo.png"
+          alt="pnhs-logo"
         />
-        <TextField
-          margin="normal"
-          required
-          fullWidth
-          name="password"
-          label="Password"
-          type="password"
-          id="password"
-          autoComplete="current-password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <FormControlLabel
-          control={<Checkbox value="remember" color="primary" />}
-          label="Remember me"
-          color="primary"
-        />
-        <Button
-          type="submit"
-          fullWidth
-          variant="contained"
-          sx={{ mt: 3, mb: 2 }}
-          onClick={() => onSubmitHandler}
-        >
-          Sign in
-        </Button>
-        <Grid container>
-          <Link href="#" variant="body2" color="primary">
-            Forgot password?
-          </Link>
-        </Grid>
-        <Grid item>
-          <Link href="#" variant="body2" color="primary">
-            Don't have and account? Sign Up
-          </Link>
-        </Grid>
-      </Box>
-    </Box>
+        <h1>Welcome to your portal</h1>
+        <form>
+          <div className="field">
+            <label className="label">Email: </label>
+            <input className="input" type="text" id="email" name="email" />
+          </div>
+          <div className="field">
+            <label className="label">Password: </label>
+            <input
+              className="input"
+              type="password"
+              id="password"
+              name="password"
+            />
+          </div>
+          <button>Login</button>
+          <button>Reset</button>
+        </form>
+      </div>
+    </div>
   );
 }
 

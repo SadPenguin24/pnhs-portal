@@ -11,14 +11,11 @@ function RequireAuth() {
   //const user = useAppSelector(selectCurrentUser);
   const location = useLocation();
 
+  //darkMode = false
+  // darkMode ? theme="darkmode" : theme="lightMode"
+
   const content = token ? (
-    <div style={{ display: 'flex' }}>
-      <Sidebar />
-      <div style={{ flex: '6' }}>
-        <NavBar />
-        <Outlet />
-      </div>
-    </div>
+    <Outlet />
   ) : (
     <Navigate to="/login" state={{ from: location }} replace />
   );

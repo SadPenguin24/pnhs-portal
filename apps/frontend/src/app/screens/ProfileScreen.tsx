@@ -9,6 +9,7 @@ const ProfileScreen = () => {
     isError,
     error,
   } = useGetProfileQuery({});
+
   const navigate = useNavigate();
 
   const logoutHandler = (event: React.FormEvent<HTMLFormElement>) => {

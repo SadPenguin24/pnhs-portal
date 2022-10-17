@@ -1,0 +1,25 @@
+.wrap-center {
+  position: absolute;
+     top: 50%;
+     height: 400px;
+     margin-top: -200px; /* Half of the height */
+     left: 50%;
+     width:800px;
+     margin-left: -400px; /* Half of the width */
+     padding:10px;
+}
+
+.child-center {
+  position: relative;
+  top: 10%;
+  left: 25%;
+}
+
+.image {
+  position: relative;
+  max-width: 25%;
+  height: auto;
+}
+
+
+

@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
+    "css-build": "node-sass --omit-source-map-url ../apps/frontend/styles/sass/mystyles.scss ../apps/frontend/styles/css/mystyles.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "nx serve css-watch",
     "build": "nx build",
     "test": "nx test"
   },
@@ -24,6 +26,7 @@
     "@types/cookie": "^0.5.1",
     "@types/react-redux": "^7.1.24",
     "bcrypt": "^5.0.1",
+    "bulma": "^0.9.4",
     "cookies-next": "^2.1.1",
     "core-js": "^3.6.5",
     "mongoose": "^6.5.2",
