@@ -14,7 +14,7 @@ import './styles/global.scss';
 //css is rough change when finalizing
 export function App() {
   return (
-    <div className="container">
+    <div>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/login" element={<LoginScreen />} />

@@ -2,6 +2,16 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../redux/store';
 import { setCookie } from 'cookies-next';
+import {
+  Button,
+  Card,
+  Col,
+  Container,
+  Form,
+  Image,
+  ListGroup,
+  Row,
+} from 'react-bootstrap';
 
 import { setCredentials } from '../redux/slice/authSlice';
 
@@ -41,32 +51,57 @@ function LoginScreen() {
   };
 
   return (
-    <div className="wrap-center">
-      <div className="child-center">
-        <img
-          className="image"
+    <div>
+      <Container style={{ textAlign: 'center' }}>
+        <Image
           src="../../assets/images/pnhs-logo.png"
           alt="pnhs-logo"
+          roundedCircle
+          style={{ width: '25%' }}
+          className="my-4"
         />
-        <h1>Welcome to your portal</h1>
-        <form>
-          <div className="field">
-            <label className="label">Email: </label>
-            <input className="input" type="text" id="email" name="email" />
-          </div>
-          <div className="field">
-            <label className="label">Password: </label>
-            <input
-              className="input"
-              type="password"
-              id="password"
-              name="password"
-            />
-          </div>
-          <button>Login</button>
-          <button>Reset</button>
-        </form>
-      </div>
+        <h1 className="mb-4">
+          <strong>WELCOME TO YOUR PORTAL</strong>
+        </h1>
+        <div
+          className="p-4 mx-auto"
+          style={{ backgroundColor: '#C6F6D8', width: '70%' }}
+        >
+          <Form>
+            <Row style={{ textAlign: 'start' }}>
+              <Col sm="2">
+                <Form.Label>Select Role:</Form.Label>
+              </Col>
+              <Col sm="10" className="mb-4">
+                <Form.Check inline type="radio" label="Student" />
+                <Form.Check inline type="radio" label="Employee" />
+              </Col>
+              <Form.Group as={Row} className="mb-2">
+                <Form.Label column sm="2">
+                  Email:{' '}
+                </Form.Label>
+                <Col sm="10">
+                  <Form.Control type="text" id="email" name="email" />
+                </Col>
+              </Form.Group>
+              <Form.Group as={Row} className="mb-2">
+                <Form.Label column sm="2">
+                  Password:{' '}
+                </Form.Label>
+                <Col sm="10">
+                  <Form.Control type="password" id="password" name="password" />
+                </Col>
+              </Form.Group>
+
+              <Col sm="2"></Col>
+              <Col sm="10">
+                <Button className="me-5">Login</Button>
+                <Button>Reset</Button>
+              </Col>
+            </Row>
+          </Form>
+        </div>
+      </Container>
     </div>
   );
 }
