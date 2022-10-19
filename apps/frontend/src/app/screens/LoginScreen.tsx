@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../redux/store';
 import { setCookie } from 'cookies-next';
 import {
@@ -57,7 +57,7 @@ function LoginScreen() {
           src="../../assets/images/pnhs-logo.png"
           alt="pnhs-logo"
           roundedCircle
-          style={{ width: '25%' }}
+          style={{ width: '20%' }}
           className="my-4"
         />
         <h1 className="mb-4">
@@ -69,34 +69,76 @@ function LoginScreen() {
         >
           <Form>
             <Row style={{ textAlign: 'start' }}>
-              <Col sm="2">
+              <Col md="2">
                 <Form.Label>Select Role:</Form.Label>
               </Col>
-              <Col sm="10" className="mb-4">
-                <Form.Check inline type="radio" label="Student" />
-                <Form.Check inline type="radio" label="Employee" />
+              <Col md="10" className="mb-4">
+                <Form.Group>
+                  <Form.Check
+                    inline
+                    type="radio"
+                    label="Student"
+                    id="student"
+                    name="role"
+                  />
+                  <Form.Check
+                    inline
+                    type="radio"
+                    label="Employee"
+                    id="employee"
+                    name="role"
+                  />
+                </Form.Group>
               </Col>
-              <Form.Group as={Row} className="mb-2">
-                <Form.Label column sm="2">
-                  Email:{' '}
-                </Form.Label>
-                <Col sm="10">
-                  <Form.Control type="text" id="email" name="email" />
-                </Col>
+              <Form.Group className="mb-3">
+                <Row>
+                  <Col md="2">
+                    <Form.Label>Email: </Form.Label>
+                  </Col>
+                  <Col md="10">
+                    <Form.Control
+                      type="text"
+                      id="email"
+                      name="email"
+                      className="borderColor"
+                    />
+                  </Col>
+                </Row>
               </Form.Group>
-              <Form.Group as={Row} className="mb-2">
-                <Form.Label column sm="2">
-                  Password:{' '}
-                </Form.Label>
-                <Col sm="10">
-                  <Form.Control type="password" id="password" name="password" />
-                </Col>
+              <Form.Group className="mb-3">
+                <Row>
+                  <Col md="2">
+                    <Form.Label>Password: </Form.Label>
+                  </Col>
+                  <Col md="10">
+                    <Form.Control
+                      type="password"
+                      id="password"
+                      name="password"
+                      className="borderColor"
+                    />
+                  </Col>
+                </Row>
               </Form.Group>
 
-              <Col sm="2"></Col>
-              <Col sm="10">
-                <Button className="me-5">Login</Button>
-                <Button>Reset</Button>
+              <Col md="2"></Col>
+              <Col md="10" className="mb-3">
+                <Button
+                  variant="outline-success"
+                  size="lg"
+                  className="buttons me-4"
+                >
+                  Login
+                </Button>
+                <Button variant="outline-success" size="lg" className="buttons">
+                  Reset
+                </Button>
+              </Col>
+              <Col md="2"></Col>
+              <Col md="10">
+                <Link style={{ color: '#045933' }} to="#">
+                  Forgot Password?
+                </Link>
               </Col>
             </Row>
           </Form>
