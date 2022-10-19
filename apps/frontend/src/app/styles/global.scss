@@ -6,11 +6,21 @@ $family-sans-serif: "Arial", sans-serif;
   color: #045933;
 }
 
-.container {
-  max-width: max-content;
-  max-height: max-content;
-
+body {
+  background-color: white;
 }
+
+$theme-colors: (
+    "primary": #66da43
+);
+
+@import '~bootstrap/scss/bootstrap.scss';
+
+// .container {
+//   max-width: max-content;
+//   max-height: max-content;
+
+// }
 
 
 

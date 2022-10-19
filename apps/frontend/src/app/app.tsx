@@ -6,6 +6,8 @@ import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import ProfileScreen from './screens/ProfileScreen';
 
+import AdminHomeScreen from './screens/AdminHomeScreen';
+
 import Layout from './redux/screens/Layout';
 import RequireAuth from './redux/screens/RequireAuth';
 
@@ -18,6 +20,9 @@ export function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/login" element={<LoginScreen />} />
+
+          {/* Admin Screens */}
+          <Route path="/admin/home" element={<AdminHomeScreen />} />
 
           {/*Protected Routes */}
           <Route element={<RequireAuth />}>

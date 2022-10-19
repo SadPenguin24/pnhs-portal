@@ -2,16 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../redux/store';
 import { setCookie } from 'cookies-next';
-import {
-  Button,
-  Card,
-  Col,
-  Container,
-  Form,
-  Image,
-  ListGroup,
-  Row,
-} from 'react-bootstrap';
+import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap';
 
 import { setCredentials } from '../redux/slice/authSlice';
 
@@ -52,21 +43,20 @@ function LoginScreen() {
 
   return (
     <div>
+      {/* change background color to green */}
+      <style>{'body { background-color: #66DA43; }'}</style>
       <Container style={{ textAlign: 'center' }}>
         <Image
           src="../../assets/images/pnhs-logo.png"
           alt="pnhs-logo"
+          width={'20%'}
           roundedCircle
-          style={{ width: '20%' }}
           className="my-4"
         />
         <h1 className="mb-4">
           <strong>WELCOME TO YOUR PORTAL</strong>
         </h1>
-        <div
-          className="p-4 mx-auto"
-          style={{ backgroundColor: '#C6F6D8', width: '70%' }}
-        >
+        <div className="p-4 mx-auto box">
           <Form>
             <Row style={{ textAlign: 'start' }}>
               <Col md="2">
@@ -124,13 +114,13 @@ function LoginScreen() {
               <Col md="2"></Col>
               <Col md="10" className="mb-3">
                 <Button
-                  variant="outline-success"
+                  variant="outline-primary"
                   size="lg"
                   className="buttons me-4"
                 >
                   Login
                 </Button>
-                <Button variant="outline-success" size="lg" className="buttons">
+                <Button variant="outline-primary" size="lg" className="buttons">
                   Reset
                 </Button>
               </Col>
