@@ -40,6 +40,8 @@ function Header({ page }: any) {
                 ? 'Menu'
                 : page === 'profile'
                 ? 'View Admin Profile'
+                : page === 'enroll'
+                ? 'Enrollment Process'
                 : ''}
             </h3>
           </Navbar.Brand>

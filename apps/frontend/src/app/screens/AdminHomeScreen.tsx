@@ -18,10 +18,12 @@ function AdminHomeScreen() {
               Admin Profile
             </Col>
           </LinkContainer>
-          <Col lg="3" md="4" sm="6" className="text-center">
-            <div className="admin-box"></div>
-            Enrollment Process
-          </Col>
+          <LinkContainer to="/admin/enroll">
+            <Col lg="3" md="4" sm="6" className="text-center">
+              <div className="admin-box"></div>
+              Enrollment Process
+            </Col>
+          </LinkContainer>
           <Col lg="3" md="4" sm="6" className="text-center">
             <div className="admin-box"></div>
             Student Account
