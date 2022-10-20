@@ -1,9 +1,10 @@
 import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 import '../styles/adminHome.scss';
 
 import Header from '../components/header/Header';
-import { Col, Container, Row } from 'react-bootstrap';
 
 function AdminHomeScreen() {
   return (
@@ -11,46 +12,34 @@ function AdminHomeScreen() {
       <Header page={'home'} />
       <Container>
         <Row>
+          <LinkContainer to="/admin/profile">
+            <Col lg="3" md="4" sm="6" className="text-center">
+              <div className="admin-box"></div>
+              Admin Profile
+            </Col>
+          </LinkContainer>
           <Col lg="3" md="4" sm="6" className="text-center">
-            <div
-              style={{ width: '100%', height: '100px', border: 'solid' }}
-            ></div>
-            Admin Profile
-          </Col>
-          <Col lg="3" md="4" sm="6" className="text-center">
-            <div
-              style={{ width: '100%', height: '100px', border: 'solid' }}
-            ></div>
+            <div className="admin-box"></div>
             Enrollment Process
           </Col>
           <Col lg="3" md="4" sm="6" className="text-center">
-            <div
-              style={{ width: '100%', height: '100px', border: 'solid' }}
-            ></div>
+            <div className="admin-box"></div>
             Student Account
           </Col>
           <Col lg="3" md="4" sm="6" className="text-center">
-            <div
-              style={{ width: '100%', height: '100px', border: 'solid' }}
-            ></div>
+            <div className="admin-box"></div>
             Faculty Account
           </Col>
           <Col lg="3" md="4" sm="6" className="text-center">
-            <div
-              style={{ width: '100%', height: '100px', border: 'solid' }}
-            ></div>
+            <div className="admin-box"></div>
             Strand / Enrolees
           </Col>
           <Col lg="3" md="4" sm="6" className="text-center">
-            <div
-              style={{ width: '100%', height: '100px', border: 'solid' }}
-            ></div>
+            <div className="admin-box"></div>
             Schedule of Student
           </Col>
           <Col lg="3" md="4" sm="6" className="text-center">
-            <div
-              style={{ width: '100%', height: '100px', border: 'solid' }}
-            ></div>
+            <div className="admin-box"></div>
             Schedule of Faculty
           </Col>
         </Row>

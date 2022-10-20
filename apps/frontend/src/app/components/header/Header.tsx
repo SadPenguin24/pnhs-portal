@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Container, Image, Nav, Navbar, Row } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 import './header.scss';
 
@@ -33,22 +34,40 @@ function Header({ page }: any) {
       </nav>
       <Navbar expand="sm" className="bottomHeader">
         <Container>
-          <Navbar.Brand className="colorNav py-0 border-2 border-bottom border-primary">
-            {page === 'home' && 'Menu'}
+          <Navbar.Brand className="colorNav border-2 border-bottom border-primary">
+            <h3 className="py-0 my-0">
+              {page === 'home'
+                ? 'Menu'
+                : page === 'profile'
+                ? 'View Admin Profile'
+                : ''}
+            </h3>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               {page === 'home' ? (
                 <>
-                  <Navbar.Brand className="colorNav">Admin</Navbar.Brand>
-                  <Navbar.Brand className="colorNav">Logout</Navbar.Brand>
+                  <Navbar.Brand className="colorNav">
+                    <div>Admin</div>
+                  </Navbar.Brand>
+                  <Navbar.Brand className="colorNav">
+                    <div>Logout</div>
+                  </Navbar.Brand>
                 </>
               ) : (
                 <>
-                  <Navbar.Brand className="colorNav">Admin</Navbar.Brand>
-                  <Navbar.Brand className="colorNav">Menu</Navbar.Brand>
-                  <Navbar.Brand className="colorNav">Logout</Navbar.Brand>
+                  <Navbar.Brand className="colorNav">
+                    <div>Admin</div>
+                  </Navbar.Brand>
+                  <LinkContainer to="/admin/home">
+                    <Navbar.Brand className="colorNav">
+                      <div>Menu</div>
+                    </Navbar.Brand>
+                  </LinkContainer>
+                  <Navbar.Brand className="colorNav">
+                    <div>Logout</div>
+                  </Navbar.Brand>
                 </>
               )}
             </Nav>

@@ -12,6 +12,7 @@ import Layout from './redux/screens/Layout';
 import RequireAuth from './redux/screens/RequireAuth';
 
 import './styles/global.scss';
+import AdminProfileScreen from './screens/AdminProfileScreen';
 
 //css is rough change when finalizing
 export function App() {
@@ -23,6 +24,7 @@ export function App() {
 
           {/* Admin Screens */}
           <Route path="/admin/home" element={<AdminHomeScreen />} />
+          <Route path="/admin/profile" element={<AdminProfileScreen />} />
 
           {/*Protected Routes */}
           <Route element={<RequireAuth />}>
