@@ -2,10 +2,10 @@ import React from 'react';
 import { Button, Container } from 'react-bootstrap';
 import Header from '../components/header/Header';
 
-function AdminProfileScreen() {
+function AdminStudentProfile() {
   return (
     <div>
-      <Header page="View Admin Profile" />
+      <Header page="Edit Student Profile" />
       <Container>
         <div className="mx-auto mb-2" style={{ width: '50%' }}>
           <div
@@ -25,13 +25,22 @@ function AdminProfileScreen() {
               <strong>Middle Name:</strong> Frayre
             </div>
             <div className="mb-2">
-              <strong>Sex:</strong> Male
+              <strong>Grade Level:</strong> 11
             </div>
             <div className="mb-2">
               <strong>Age:</strong> 23
             </div>
             <div className="mb-2">
-              <strong>Role:</strong> Admin
+              <strong>Learner Reference Number:</strong> 123456789000
+            </div>
+            <div className="mb-2">
+              <strong>Date of Birth:</strong> May 24, 1999
+            </div>
+            <div className="mb-2">
+              <strong>Place of Birth:</strong> Cainta, Rizal
+            </div>
+            <div className="mb-2">
+              <strong>Contact Number:</strong> 09999999999
             </div>
           </div>
           <div className="d-flex justify-content-center">
@@ -48,4 +57,4 @@ function AdminProfileScreen() {
   );
 }
 
-export default AdminProfileScreen;
+export default AdminStudentProfile;

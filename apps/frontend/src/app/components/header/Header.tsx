@@ -32,7 +32,7 @@ function Header({ page }: any) {
           </Row>
         </Container>
       </nav>
-      <Navbar expand="sm" className="bottomHeader">
+      <Navbar expand="md" className="bottomHeader">
         <Container>
           <Navbar.Brand className="colorNav border-2 border-bottom border-primary">
             <h3 className="py-0 my-0">{page ? page : ''}</h3>

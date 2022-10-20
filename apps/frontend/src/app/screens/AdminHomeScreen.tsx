@@ -13,36 +13,36 @@ function AdminHomeScreen() {
       <Container>
         <Row>
           <LinkContainer to="/admin/profile">
-            <Col lg="3" md="4" sm="6" className="text-center">
+            <Col lg="3" md="4" xs="6" className="text-center">
               <div className="admin-box"></div>
               Admin Profile
             </Col>
           </LinkContainer>
           <LinkContainer to="/admin/enroll">
-            <Col lg="3" md="4" sm="6" className="text-center">
+            <Col lg="3" md="4" xs="6" className="text-center">
               <div className="admin-box"></div>
               Enrollment Process
             </Col>
           </LinkContainer>
           <LinkContainer to="/admin/studentlist">
-            <Col lg="3" md="4" sm="6" className="text-center">
+            <Col lg="3" md="4" xs="6" className="text-center">
               <div className="admin-box"></div>
               List of Students
             </Col>
           </LinkContainer>
-          <Col lg="3" md="4" sm="6" className="text-center">
+          <Col lg="3" md="4" xs="6" className="text-center">
             <div className="admin-box"></div>
             Faculty Account
           </Col>
-          <Col lg="3" md="4" sm="6" className="text-center">
+          <Col lg="3" md="4" xs="6" className="text-center">
             <div className="admin-box"></div>
             Strand / Enrolees
           </Col>
-          <Col lg="3" md="4" sm="6" className="text-center">
+          <Col lg="3" md="4" xs="6" className="text-center">
             <div className="admin-box"></div>
             Schedule of Student
           </Col>
-          <Col lg="3" md="4" sm="6" className="text-center">
+          <Col lg="3" md="4" xs="6" className="text-center">
             <div className="admin-box"></div>
             Schedule of Faculty
           </Col>
