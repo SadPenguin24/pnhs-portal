@@ -35,15 +35,7 @@ function Header({ page }: any) {
       <Navbar expand="sm" className="bottomHeader">
         <Container>
           <Navbar.Brand className="colorNav border-2 border-bottom border-primary">
-            <h3 className="py-0 my-0">
-              {page === 'home'
-                ? 'Menu'
-                : page === 'profile'
-                ? 'View Admin Profile'
-                : page === 'enroll'
-                ? 'Enrollment Process'
-                : ''}
-            </h3>
+            <h3 className="py-0 my-0">{page ? page : ''}</h3>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

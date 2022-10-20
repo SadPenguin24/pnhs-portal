@@ -5,9 +5,9 @@ import Header from '../components/header/Header';
 function AdminProfileScreen() {
   return (
     <div>
-      <Header page="profile" />
+      <Header page="View Admin Profile" />
       <Container>
-        <div className="mx-auto" style={{ width: '50%' }}>
+        <div className="mx-auto mb-2" style={{ width: '50%' }}>
           <div
             style={{ width: '100px', height: '100px', border: 'solid' }}
             className="mx-auto mb-2"
@@ -35,10 +35,12 @@ function AdminProfileScreen() {
             </div>
           </div>
           <div className="d-flex justify-content-center">
-            <Button size="lg" className="me-5">
+            <Button variant="outline-primary" size="lg" className="me-5">
               Edit
             </Button>
-            <Button size="lg">Save</Button>
+            <Button variant="outline-primary" size="lg">
+              Save
+            </Button>
           </div>
         </div>
       </Container>

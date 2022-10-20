@@ -113,14 +113,10 @@ function LoginScreen() {
 
               <Col md="2"></Col>
               <Col md="10" className="mb-3">
-                <Button
-                  variant="outline-primary"
-                  size="lg"
-                  className="buttons me-4"
-                >
+                <Button variant="outline-primary" size="lg" className=" me-4">
                   Login
                 </Button>
-                <Button variant="outline-primary" size="lg" className="buttons">
+                <Button variant="outline-primary" size="lg">
                   Reset
                 </Button>
               </Col>

@@ -10,11 +10,9 @@ body {
   background-color: white;
 }
 
-$theme-colors: (
-    "primary": #66da43
-);
+$primary: #66da43;
 
-@import '~bootstrap/scss/bootstrap.scss';
+@import "bootstrap";
 
 // .container {
 //   max-width: max-content;

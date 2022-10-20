@@ -9,7 +9,7 @@ import Header from '../components/header/Header';
 function AdminHomeScreen() {
   return (
     <>
-      <Header page={'home'} />
+      <Header page="Menu" />
       <Container>
         <Row>
           <LinkContainer to="/admin/profile">
@@ -24,10 +24,12 @@ function AdminHomeScreen() {
               Enrollment Process
             </Col>
           </LinkContainer>
-          <Col lg="3" md="4" sm="6" className="text-center">
-            <div className="admin-box"></div>
-            Student Account
-          </Col>
+          <LinkContainer to="/admin/studentlist">
+            <Col lg="3" md="4" sm="6" className="text-center">
+              <div className="admin-box"></div>
+              List of Students
+            </Col>
+          </LinkContainer>
           <Col lg="3" md="4" sm="6" className="text-center">
             <div className="admin-box"></div>
             Faculty Account
