@@ -40,7 +40,7 @@ function Header({ page }: any) {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              {page === 'home' ? (
+              {page === 'Menu' ? (
                 <>
                   <Navbar.Brand className="colorNav">
                     <div>Admin</div>
