@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import Header from '../components/header/Header';
 
 function AdminStrandEnrollees() {
@@ -9,9 +10,11 @@ function AdminStrandEnrollees() {
       <Container>
         <Row>
           <Col md="4" xs="6" className="text-center mb-5">
-            <div className="admin-box">
-              <h1>ABM</h1>
-            </div>
+            <LinkContainer to="/admin/strandstudentlist">
+              <div className="admin-box">
+                <h1>ABM</h1>
+              </div>
+            </LinkContainer>
           </Col>
           <Col md="4" xs="6" className="text-center mb-5">
             <div className="admin-box">

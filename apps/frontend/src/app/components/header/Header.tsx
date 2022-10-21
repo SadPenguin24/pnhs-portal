@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Container, Image, Nav, Navbar, Row } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import { Link } from 'react-router-dom';
 
 import './header.scss';
 
@@ -35,7 +36,16 @@ function Header({ page }: any) {
       <Navbar expand="md" className="bottomHeader">
         <Container>
           <Navbar.Brand className="colorNav border-2 border-bottom border-primary">
-            <h3 className="py-0 my-0">{page ? page : ''}</h3>
+            {page === 'strandList' ? (
+              <Link
+                className="text-decoration-none"
+                to="/admin/strandenrollees"
+              >
+                Back
+              </Link>
+            ) : (
+              <h3 className="py-0 my-0">{page}</h3>
+            )}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
