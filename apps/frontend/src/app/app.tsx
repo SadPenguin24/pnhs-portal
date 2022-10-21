@@ -16,6 +16,7 @@ import AdminProfileScreen from './screens/AdminProfileScreen';
 import AdminEnrollProcessScreen from './screens/AdminEnrollProcessScreen';
 import AdminStudentsList from './screens/AdminStudentsList';
 import AdminStudentProfile from './screens/AdminStudentProfile';
+import AdminFacultyList from './screens/AdminFacultyList';
 
 //css is rough change when finalizing
 export function App() {
@@ -31,6 +32,7 @@ export function App() {
           <Route path="/admin/enroll" element={<AdminEnrollProcessScreen />} />
           <Route path="/admin/studentlist" element={<AdminStudentsList />} />
           <Route path="/admin/editstudent" element={<AdminStudentProfile />} />
+          <Route path="/admin/facultylist" element={<AdminFacultyList />} />
 
           {/*Protected Routes */}
           <Route element={<RequireAuth />}>
