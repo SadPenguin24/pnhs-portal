@@ -48,10 +48,12 @@ function AdminHomeScreen() {
               Schedule of Student
             </Col>
           </LinkContainer>
-          <Col lg="3" md="4" xs="6" className="text-center">
-            <div className="admin-box"></div>
-            Schedule of Faculty
-          </Col>
+          <LinkContainer to="/admin/facultyschedule">
+            <Col lg="3" md="4" xs="6" className="text-center">
+              <div className="admin-box"></div>
+              Schedule of Faculty
+            </Col>
+          </LinkContainer>
         </Row>
       </Container>
     </>

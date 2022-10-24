@@ -20,6 +20,7 @@ import AdminFacultyList from './screens/AdminFacultyList';
 import AdminStrandEnrollees from './screens/AdminStrandEnrollees';
 import AdminStrandStudentList from './screens/AdminStrandStudentList';
 import AdminStudentScheduleScreen from './screens/AdminStudentScheduleScreen';
+import AdminFacultySchedule from './screens/AdminFacultySchedule';
 
 //css is rough change when finalizing
 export function App() {
@@ -47,6 +48,10 @@ export function App() {
           <Route
             path="/admin/studentschedule"
             element={<AdminStudentScheduleScreen />}
+          />
+          <Route
+            path="/admin/facultyschedule"
+            element={<AdminFacultySchedule />}
           />
 
           {/*Protected Routes */}
