@@ -19,10 +19,12 @@ function StudentHomeScreen() {
             <div className="admin-box"></div>
             Student Profile
           </Col>
-          <Col md="6" className="text-center mb-3 clickable">
-            <div className="admin-box"></div>
-            Report Card
-          </Col>
+          <LinkContainer to="/student/reportcard">
+            <Col md="6" className="text-center mb-3 clickable">
+              <div className="admin-box"></div>
+              Report Card
+            </Col>
+          </LinkContainer>
           <Col md="6" className="text-center mb-3 clickable">
             <div className="admin-box"></div>
             Schedule / Subjects

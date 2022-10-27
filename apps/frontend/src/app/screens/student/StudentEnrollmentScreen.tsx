@@ -17,7 +17,7 @@ function StudentEnrollmentScreen() {
         <div className="mb-2">Subject Schedule</div>
         <div className="ms-5 mb-2">Block Section:</div>
         <div className="ms-5 mb-3">Load Section:</div>
-        <Table bordered>
+        <Table bordered responsive="md">
           <thead>
             <tr>
               <th>STAT</th>
@@ -31,6 +31,19 @@ function StudentEnrollmentScreen() {
               <th>ROOM</th>
             </tr>
           </thead>
+          <tbody>
+            <tr>
+              <td>sample</td>
+              <td>sample</td>
+              <td>sample</td>
+              <td>sample</td>
+              <td>sample</td>
+              <td>sample</td>
+              <td>sample</td>
+              <td>sample</td>
+              <td>sample</td>
+            </tr>
+          </tbody>
         </Table>
       </Container>
     </div>
