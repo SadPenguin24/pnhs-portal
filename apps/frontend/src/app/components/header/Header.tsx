@@ -13,8 +13,8 @@ function Header({ page }: any) {
     <div className="mb-5">
       <nav className="topHeader py-2">
         <Container>
-          <Row className="text-center text-sm-start justify-content-center justify-content-sm-start">
-            <Col className="my-auto" sm="1" style={{ width: '110px' }}>
+          <Row className="text-center text-md-start justify-content-center justify-content-md-start">
+            <Col className="my-auto" lg="1" md="12" style={{ width: '95px' }}>
               <Image
                 src="../../assets/images/pnhs-logo.png"
                 alt="pnhs-logo"
@@ -22,7 +22,7 @@ function Header({ page }: any) {
                 roundedCircle
               />
             </Col>
-            <Col className="my-auto" sm="11">
+            <Col className="my-auto" lg="11" md="12">
               <h1 className="mt-2">
                 <strong className="textBlack">
                   Pangasinan National High School

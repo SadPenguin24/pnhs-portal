@@ -3,8 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../redux/store';
 import { setCookie } from 'cookies-next';
 import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap';
-// import { setCredentials } from '../redux/slice/authSlice';
-// import { useLoginMutation } from '../redux/slice/authApiSlice.js';
 import { setCredentials } from '../redux/slice/authSlice';
 import { useLoginMutation } from '../redux/api/authApiSlice';
 
@@ -23,7 +21,6 @@ function LoginScreen() {
     event.preventDefault();
 
     try {
-      console.log('I LOVE YOU CARL');
       const { user, access_token } = await login({ email, password }).unwrap();
       dispatch(setCredentials({ user }));
 
@@ -57,27 +54,6 @@ function LoginScreen() {
         <div className="p-4 mx-auto box">
           <Form onSubmit={onSubmitHandler}>
             <Row style={{ textAlign: 'start' }}>
-              <Col md="2">
-                <Form.Label>Select Role:</Form.Label>
-              </Col>
-              <Col md="10" className="mb-4">
-                <Form.Group>
-                  <Form.Check
-                    inline
-                    type="radio"
-                    label="Student"
-                    id="student"
-                    name="role"
-                  />
-                  <Form.Check
-                    inline
-                    type="radio"
-                    label="Employee"
-                    id="employee"
-                    name="role"
-                  />
-                </Form.Group>
-              </Col>
               <Form.Group className="mb-3">
                 <Row>
                   <Col md="2">
@@ -112,27 +88,16 @@ function LoginScreen() {
                   </Col>
                 </Row>
               </Form.Group>
-
-              <Col md="2"></Col>
-              <Col md="10" className="mb-3">
-                <Button
-                  variant="outline-primary"
-                  size="lg"
-                  className=" me-4"
-                  type="submit"
-                >
+              <div className="text-center mb-3">
+                <Button variant="outline-primary" size="lg" type="submit">
                   Login
                 </Button>
-                <Button variant="outline-primary" size="lg">
-                  Reset
-                </Button>
-              </Col>
-              <Col md="2"></Col>
-              <Col md="10">
+              </div>
+              <div className="text-center">
                 <Link style={{ color: '#045933' }} to="#">
                   Forgot Password?
                 </Link>
-              </Col>
+              </div>
             </Row>
           </Form>
         </div>
