@@ -26,6 +26,7 @@ import StudentHomeScreen from './screens/student/StudentHomeScreen';
 import StudentEnrollmentScreen from './screens/student/StudentEnrollmentScreen';
 import StudentReportCardScreen from './screens/student/StudentReportCardScreen';
 import StudentScheduleScreen from './screens/student/StudentScheduleScreen';
+import StudentProfileScreen from './screens/student/StudentProfileScreen';
 
 //css is rough change when finalizing
 export function App() {
@@ -70,6 +71,7 @@ export function App() {
             element={<StudentReportCardScreen />}
           />
           <Route path="/student/schedule" element={<StudentScheduleScreen />} />
+          <Route path="/student/profile" element={<StudentProfileScreen />} />
 
           {/*Protected Routes */}
           <Route element={<RequireAuth />}>

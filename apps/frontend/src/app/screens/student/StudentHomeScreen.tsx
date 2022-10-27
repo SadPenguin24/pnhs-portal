@@ -15,10 +15,12 @@ function StudentHomeScreen() {
               Enrollment / Registration
             </Col>
           </LinkContainer>
-          <Col md="6" className="text-center mb-3 clickable">
-            <div className="admin-box"></div>
-            Student Profile
-          </Col>
+          <LinkContainer to="/student/profile">
+            <Col md="6" className="text-center mb-3 clickable">
+              <div className="admin-box"></div>
+              Student Profile
+            </Col>
+          </LinkContainer>
           <LinkContainer to="/student/reportcard">
             <Col md="6" className="text-center mb-3 clickable">
               <div className="admin-box"></div>
