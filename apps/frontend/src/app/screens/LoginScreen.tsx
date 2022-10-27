@@ -3,10 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../redux/store';
 import { setCookie } from 'cookies-next';
 import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap';
-
+// import { setCredentials } from '../redux/slice/authSlice';
+// import { useLoginMutation } from '../redux/slice/authApiSlice.js';
 import { setCredentials } from '../redux/slice/authSlice';
-
-import { useLoginMutation } from '../redux/slice/authApiSlice.js';
+import { useLoginMutation } from '../redux/api/authApiSlice';
 
 import '../styles/login.scss';
 
@@ -21,23 +21,21 @@ function LoginScreen() {
 
   const onSubmitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log('EMAIL: ', email);
-    console.log('PASSWORDss: ', password);
 
     try {
+      console.log('I LOVE YOU CARL');
       const { user, access_token } = await login({ email, password }).unwrap();
-      dispatch(setCredentials({ user, access_token }));
+      dispatch(setCredentials({ user }));
+
       setCookie('access_token', access_token, {
         sameSite: 'strict',
       });
-      console.log('process.env.NEXT_PUBLIC_COOKIE_TIME: ', access_token, {
-        sameSite: 'strict',
-      });
+
       setEmail('');
       setPassword('');
       navigate('/');
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -57,7 +55,7 @@ function LoginScreen() {
           <strong>WELCOME TO YOUR PORTAL</strong>
         </h1>
         <div className="p-4 mx-auto box">
-          <Form>
+          <Form onSubmit={onSubmitHandler}>
             <Row style={{ textAlign: 'start' }}>
               <Col md="2">
                 <Form.Label>Select Role:</Form.Label>
@@ -87,10 +85,12 @@ function LoginScreen() {
                   </Col>
                   <Col md="10">
                     <Form.Control
-                      type="text"
+                      type="email"
                       id="email"
+                      value={email}
                       name="email"
                       className="borderColor"
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </Col>
                 </Row>
@@ -104,8 +104,10 @@ function LoginScreen() {
                     <Form.Control
                       type="password"
                       id="password"
+                      value={password}
                       name="password"
                       className="borderColor"
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </Col>
                 </Row>
@@ -113,7 +115,12 @@ function LoginScreen() {
 
               <Col md="2"></Col>
               <Col md="10" className="mb-3">
-                <Button variant="outline-primary" size="lg" className=" me-4">
+                <Button
+                  variant="outline-primary"
+                  size="lg"
+                  className=" me-4"
+                  type="submit"
+                >
                   Login
                 </Button>
                 <Button variant="outline-primary" size="lg">

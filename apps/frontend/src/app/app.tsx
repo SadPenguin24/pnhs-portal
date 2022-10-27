@@ -6,21 +6,24 @@ import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import ProfileScreen from './screens/ProfileScreen';
 
-import AdminHomeScreen from './screens/AdminHomeScreen';
-
 import Layout from './redux/screens/Layout';
 import RequireAuth from './redux/screens/RequireAuth';
 
 import './styles/global.scss';
-import AdminProfileScreen from './screens/AdminProfileScreen';
-import AdminEnrollProcessScreen from './screens/AdminEnrollProcessScreen';
-import AdminStudentsList from './screens/AdminStudentsList';
-import AdminStudentProfile from './screens/AdminStudentProfile';
-import AdminFacultyList from './screens/AdminFacultyList';
-import AdminStrandEnrollees from './screens/AdminStrandEnrollees';
-import AdminStrandStudentList from './screens/AdminStrandStudentList';
-import AdminStudentScheduleScreen from './screens/AdminStudentScheduleScreen';
-import AdminFacultySchedule from './screens/AdminFacultySchedule';
+
+import AdminHomeScreen from './screens/admin/AdminHomeScreen';
+import AdminProfileScreen from './screens/admin/AdminProfileScreen';
+import AdminEnrollProcessScreen from './screens/admin/AdminEnrollProcessScreen';
+import AdminStudentsList from './screens/admin/AdminStudentsList';
+import AdminStudentProfile from './screens/admin/AdminStudentProfile';
+import AdminFacultyList from './screens/admin/AdminFacultyList';
+import AdminStrandEnrollees from './screens/admin/AdminStrandEnrollees';
+import AdminStrandStudentList from './screens/admin/AdminStrandStudentList';
+import AdminStudentScheduleScreen from './screens/admin/AdminStudentScheduleScreen';
+import AdminFacultySchedule from './screens/admin/AdminFacultySchedule';
+
+import StudentHomeScreen from './screens/student/StudentHomeScreen';
+import StudentEnrollmentScreen from './screens/student/StudentEnrollmentScreen';
 
 //css is rough change when finalizing
 export function App() {
@@ -52,6 +55,13 @@ export function App() {
           <Route
             path="/admin/facultyschedule"
             element={<AdminFacultySchedule />}
+          />
+
+          {/* Student Screens */}
+          <Route path="/student/home" element={<StudentHomeScreen />} />
+          <Route
+            path="/student/enrollment"
+            element={<StudentEnrollmentScreen />}
           />
 
           {/*Protected Routes */}

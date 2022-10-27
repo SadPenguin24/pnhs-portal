@@ -1,12 +1,11 @@
 import React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
-import Header from '../components/header/Header';
+import Header from '../../components/header/Header';
 
-function AdminStudentsList() {
+function AdminFacultyList() {
   return (
     <div>
-      <Header page="List of Students Accounts" />
+      <Header page="Name of Faculty" />
       <Container>
         <Row>
           <Col className="p-2" xs="8">
@@ -17,23 +16,7 @@ function AdminStudentsList() {
           </Col>
 
           <Col className="p-2" xs="8">
-            1. Dan Villadolid
-          </Col>
-          <Col className="text-center p-2" xs="2">
-            <LinkContainer to="/admin/editstudent">
-              <Button variant="outline-primary" size="sm">
-                Profile
-              </Button>
-            </LinkContainer>
-          </Col>
-          <Col className="text-center p-2" xs="2">
-            <Button variant="outline-danger" size="sm">
-              Delete
-            </Button>
-          </Col>
-
-          <Col className="p-2" xs="8">
-            2. Gregory Babela
+            1. Ovaltine
           </Col>
           <Col className="text-center p-2" xs="2">
             <Button variant="outline-primary" size="sm">
@@ -47,7 +30,21 @@ function AdminStudentsList() {
           </Col>
 
           <Col className="p-2" xs="8">
-            3. Carl Salanga
+            2. Thanos
+          </Col>
+          <Col className="text-center p-2" xs="2">
+            <Button variant="outline-primary" size="sm">
+              Profile
+            </Button>
+          </Col>
+          <Col className="text-center p-2" xs="2">
+            <Button variant="outline-danger" size="sm">
+              Delete
+            </Button>
+          </Col>
+
+          <Col className="p-2" xs="8">
+            3. Ramsy Boy
           </Col>
           <Col className="text-center p-2" xs="2">
             <Button variant="outline-primary" size="sm">
@@ -65,4 +62,4 @@ function AdminStudentsList() {
   );
 }
 
-export default AdminStudentsList;
+export default AdminFacultyList;

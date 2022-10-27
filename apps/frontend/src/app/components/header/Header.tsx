@@ -7,6 +7,8 @@ import './header.scss';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function Header({ page }: any) {
+  const role = window.location.pathname.split('/');
+
   return (
     <div className="mb-5">
       <nav className="topHeader py-2">
@@ -50,10 +52,15 @@ function Header({ page }: any) {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              {page === 'Menu' ? (
+              {page === 'Menu' || page === 'Portal Main Menu' ? (
                 <>
                   <Navbar.Brand className="colorNav">
-                    <div>Admin</div>
+                    {/* <div>Admin</div> */}
+                    {role[0] === 'admin' ? (
+                      <div>Admin</div>
+                    ) : (
+                      <div>Student</div>
+                    )}
                   </Navbar.Brand>
                   <Navbar.Brand className="colorNav">
                     <div>Logout</div>
@@ -62,13 +69,26 @@ function Header({ page }: any) {
               ) : (
                 <>
                   <Navbar.Brand className="colorNav">
-                    <div>Admin</div>
+                    {/* <div>Admin</div> */}
+                    {role[0] === 'admin' ? (
+                      <div>Admin</div>
+                    ) : (
+                      <div>Student</div>
+                    )}
                   </Navbar.Brand>
-                  <LinkContainer to="/admin/home">
-                    <Navbar.Brand className="colorNav">
-                      <div>Menu</div>
-                    </Navbar.Brand>
-                  </LinkContainer>
+                  {role[0] === 'admin' ? (
+                    <LinkContainer to="/admin/home">
+                      <Navbar.Brand className="colorNav">
+                        <div>Menu</div>
+                      </Navbar.Brand>
+                    </LinkContainer>
+                  ) : (
+                    <LinkContainer to="/student/home">
+                      <Navbar.Brand className="colorNav">
+                        <div>Menu</div>
+                      </Navbar.Brand>
+                    </LinkContainer>
+                  )}
                   <Navbar.Brand className="colorNav">
                     <div>Logout</div>
                   </Navbar.Brand>

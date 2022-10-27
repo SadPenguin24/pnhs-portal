@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Col, Container, Row, Table } from 'react-bootstrap';
-import Header from '../components/header/Header';
+import Header from '../../components/header/Header';
 
 function AdminFacultySchedule() {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import Header from '../components/header/Header';
+import Header from '../../components/header/Header';
 
 function AdminStrandEnrollees() {
   return (
@@ -11,7 +11,7 @@ function AdminStrandEnrollees() {
         <Row>
           <Col md="4" xs="6" className="text-center mb-5">
             <LinkContainer to="/admin/strandstudentlist">
-              <div className="admin-box">
+              <div className="admin-box clickable">
                 <h1>ABM</h1>
               </div>
             </LinkContainer>
