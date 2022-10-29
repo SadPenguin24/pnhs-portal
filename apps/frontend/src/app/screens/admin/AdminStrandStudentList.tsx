@@ -5,7 +5,7 @@ import Header from '../../components/header/Header';
 function AdminStrandStudentList() {
   return (
     <div>
-      <Header page="strandList" />
+      <Header page="strandList" redirect="/admin/strandenrollees" />
       <Container>
         <h2 className="text-center">List of All ABM Students</h2>
         <h4>1. Dan Villadolid</h4>

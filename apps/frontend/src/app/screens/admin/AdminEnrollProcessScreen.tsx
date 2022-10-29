@@ -4,7 +4,7 @@ import Header from '../../components/header/Header';
 function AdminEnrollProcessScreen() {
   return (
     <div>
-      <Header page="Enrollment Process" />
+      <Header page="Enrollment Process" redirect="/admin/home" />
       <div style={{ width: '70%' }} className="mx-auto border p-5">
         <div>&gt; STRAND / TRACK</div>
         <div className="ms-3 mt-4">

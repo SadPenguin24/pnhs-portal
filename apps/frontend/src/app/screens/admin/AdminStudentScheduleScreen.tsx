@@ -5,7 +5,7 @@ import Header from '../../components/header/Header';
 function AdminStudentScheduleScreen() {
   return (
     <div>
-      <Header page="Schedule of ABM Student" />
+      <Header page="Schedule of ABM Student" redirect="/admin/home" />
       <Container>
         <Row className="mb-4">
           <Col xs="4">

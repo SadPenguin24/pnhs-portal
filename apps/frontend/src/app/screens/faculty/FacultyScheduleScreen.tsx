@@ -5,7 +5,7 @@ import Header from '../../components/header/Header';
 function FacultyScheduleScreen() {
   return (
     <div>
-      <Header page="Faculty Schedule" />
+      <Header page="Faculty Schedule" redirect="/faculty/home" />
       <Container>
         <Table bordered>
           <thead>

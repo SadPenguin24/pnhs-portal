@@ -5,7 +5,7 @@ import Header from '../../components/header/Header';
 function AdminProfileScreen() {
   return (
     <div>
-      <Header page="View Admin Profile" />
+      <Header page="View Admin Profile" redirect="/admin/home" />
       <Container>
         <div className="mx-auto mb-2" style={{ width: '50%' }}>
           <div

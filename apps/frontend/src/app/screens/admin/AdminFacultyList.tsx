@@ -5,7 +5,7 @@ import Header from '../../components/header/Header';
 function AdminFacultyList() {
   return (
     <div>
-      <Header page="Name of Faculty" />
+      <Header page="Name of Faculty" redirect="/admin/home" />
       <Container>
         <Row>
           <Col className="p-2" xs="8">

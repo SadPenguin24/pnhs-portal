@@ -10,7 +10,7 @@ function FacultyGradeScreen() {
 
   return (
     <div>
-      <Header page="Grade Module" />
+      <Header page="Grade Module" redirect="/faculty/home" />
       <Container>
         <Nav>
           <Nav.Item className="my-auto">Filter by</Nav.Item>

@@ -5,7 +5,7 @@ import Header from '../../components/header/Header';
 function FacultyProfileScreen() {
   return (
     <div>
-      <Header page="My Profile" />
+      <Header page="My Profile" redirect="/faculty/home" />
       <Container>
         <div className="text-center mb-3">Image</div>
 

@@ -6,7 +6,7 @@ import { ReportCardTable } from '../../components/tables/Tables';
 function StudentReportCardScreen() {
   return (
     <div>
-      <Header page="Report Card" />
+      <Header page="Report Card" redirect="/student/home" />
       <Container>
         <h3>Grade 11</h3>
         <h4>1ST SEMESTER</h4>

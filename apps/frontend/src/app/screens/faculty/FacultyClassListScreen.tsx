@@ -8,7 +8,7 @@ function FacultyClassListScreen() {
   const [subjCode, setSubjCode] = useState('Subject Code');
   return (
     <div>
-      <Header page="Class List" />
+      <Header page="Class List" redirect="/faculty/home" />
       <Container>
         <Nav>
           <Nav.Item className="my-auto">Filter by</Nav.Item>

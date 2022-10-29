@@ -6,7 +6,7 @@ import Header from '../../components/header/Header';
 function AdminStrandEnrollees() {
   return (
     <div>
-      <Header page="Strand / Enrollees" />
+      <Header page="Strand / Enrollees" redirect="/admin/home" />
       <Container>
         <Row>
           <Col md="4" xs="6" className="text-center mb-5">

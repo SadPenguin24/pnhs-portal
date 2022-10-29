@@ -5,7 +5,7 @@ import Header from '../../components/header/Header';
 function StudentScheduleScreen() {
   return (
     <div>
-      <Header page="Schedule / Subjects" />
+      <Header page="Schedule / Subjects" redirect="/student/home" />
       <Container>
         <div className="text-center">
           <h4>

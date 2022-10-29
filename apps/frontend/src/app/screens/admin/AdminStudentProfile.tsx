@@ -5,7 +5,7 @@ import Header from '../../components/header/Header';
 function AdminStudentProfile() {
   return (
     <div>
-      <Header page="Edit Student Profile" />
+      <Header page="Edit Student Profile" redirect="/admin/studentlist" />
       <Container>
         <div className="mx-auto mb-2" style={{ width: '50%' }}>
           <div

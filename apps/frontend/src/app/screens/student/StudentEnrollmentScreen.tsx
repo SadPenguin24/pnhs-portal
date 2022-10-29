@@ -5,7 +5,7 @@ import Header from '../../components/header/Header';
 function StudentEnrollmentScreen() {
   return (
     <div>
-      <Header page="Enrollment / Registration" />
+      <Header page="Enrollment / Registration" redirect="/student/home" />
       <Container>
         <div className="mb-2">Student ID:</div>
         <div className="mb-2">Full Name on Records:</div>

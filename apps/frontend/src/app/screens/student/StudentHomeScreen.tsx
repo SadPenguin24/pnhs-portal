@@ -6,7 +6,7 @@ import Header from '../../components/header/Header';
 function StudentHomeScreen() {
   return (
     <>
-      <Header page="Portal Main Menu" />
+      <Header page="Menu" />
       <Container>
         <Row>
           <LinkContainer to="/student/enrollment">

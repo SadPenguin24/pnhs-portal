@@ -6,7 +6,7 @@ import Header from '../../components/header/Header';
 function AdminStudentsList() {
   return (
     <div>
-      <Header page="List of Students Accounts" />
+      <Header page="List of Students Accounts" redirect="/admin/home" />
       <Container>
         <Row>
           <Col className="p-2" xs="8">
