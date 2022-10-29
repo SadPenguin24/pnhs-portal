@@ -27,10 +27,12 @@ function FacultyHomeScreen() {
               SHS Grade Module
             </Col>
           </LinkContainer>
-          <Col md="6" className="text-center mb-3 clickable">
-            <div className="admin-box"></div>
-            Faculty Class List
-          </Col>
+          <LinkContainer to="/faculty/classlist">
+            <Col md="6" className="text-center mb-3 clickable">
+              <div className="admin-box"></div>
+              Faculty Class List
+            </Col>
+          </LinkContainer>
         </Row>
       </Container>
     </div>
