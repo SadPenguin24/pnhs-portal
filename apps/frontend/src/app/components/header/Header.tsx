@@ -56,10 +56,12 @@ function Header({ page }: any) {
                 <>
                   <Navbar.Brand className="colorNav">
                     {/* <div>Admin</div> */}
-                    {role[0] === 'admin' ? (
+                    {role[1] === 'admin' ? (
                       <div>Admin</div>
-                    ) : (
+                    ) : role[1] === 'student' ? (
                       <div>Student</div>
+                    ) : (
+                      <div>Faculty</div>
                     )}
                   </Navbar.Brand>
                   <Navbar.Brand className="colorNav">
@@ -76,14 +78,20 @@ function Header({ page }: any) {
                       <div>Student</div>
                     )}
                   </Navbar.Brand>
-                  {role[0] === 'admin' ? (
+                  {role[1] === 'admin' ? (
                     <LinkContainer to="/admin/home">
                       <Navbar.Brand className="colorNav">
                         <div>Menu</div>
                       </Navbar.Brand>
                     </LinkContainer>
-                  ) : (
+                  ) : role[1] === 'student' ? (
                     <LinkContainer to="/student/home">
+                      <Navbar.Brand className="colorNav">
+                        <div>Menu</div>
+                      </Navbar.Brand>
+                    </LinkContainer>
+                  ) : (
+                    <LinkContainer to="/faculty/home">
                       <Navbar.Brand className="colorNav">
                         <div>Menu</div>
                       </Navbar.Brand>
