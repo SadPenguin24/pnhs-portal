@@ -72,10 +72,12 @@ function Header({ page }: any) {
                 <>
                   <Navbar.Brand className="colorNav">
                     {/* <div>Admin</div> */}
-                    {role[0] === 'admin' ? (
+                    {role[1] === 'admin' ? (
                       <div>Admin</div>
-                    ) : (
+                    ) : role[1] === 'student' ? (
                       <div>Student</div>
+                    ) : (
+                      <div>Faculty</div>
                     )}
                   </Navbar.Brand>
                   {role[1] === 'admin' ? (

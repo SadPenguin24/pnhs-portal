@@ -15,10 +15,12 @@ function FacultyHomeScreen() {
               Faculty Schedule
             </Col>
           </LinkContainer>
-          <Col md="6" className="text-center mb-3 clickable">
-            <div className="admin-box"></div>
-            Faculty Profile
-          </Col>
+          <LinkContainer to="/faculty/profile">
+            <Col md="6" className="text-center mb-3 clickable">
+              <div className="admin-box"></div>
+              Faculty Profile
+            </Col>
+          </LinkContainer>
           <Col md="6" className="text-center mb-3 clickable">
             <div className="admin-box"></div>
             SHS Grade Module
