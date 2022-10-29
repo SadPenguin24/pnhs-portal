@@ -28,6 +28,7 @@ import StudentReportCardScreen from './screens/student/StudentReportCardScreen';
 import StudentScheduleScreen from './screens/student/StudentScheduleScreen';
 import StudentProfileScreen from './screens/student/StudentProfileScreen';
 import FacultyHomeScreen from './screens/faculty/FacultyHomeScreen';
+import FacultyScheduleScreen from './screens/faculty/FacultyScheduleScreen';
 
 //css is rough change when finalizing
 export function App() {
@@ -76,6 +77,7 @@ export function App() {
 
           {/* Faculty Screens */}
           <Route path="/faculty/home" element={<FacultyHomeScreen />} />
+          <Route path="/faculty/schedule" element={<FacultyScheduleScreen />} />
 
           {/*Protected Routes */}
           <Route element={<RequireAuth />}>
