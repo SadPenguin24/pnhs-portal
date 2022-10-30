@@ -39,7 +39,7 @@ function LoginScreen() {
   return (
     <div>
       {/* change background color to green */}
-      <style>{'body { background-color: #66DA43; }'}</style>
+      <style>{'body { background-color: #25e223; }'}</style>
       <Container style={{ textAlign: 'center' }}>
         <Image
           src="../../assets/images/pnhs-logo.png"
@@ -49,7 +49,7 @@ function LoginScreen() {
           className="my-4"
         />
         <h1 className="mb-4">
-          <strong>WELCOME TO YOUR PORTAL</strong>
+          <strong className="textColor">WELCOME TO YOUR PORTAL</strong>
         </h1>
         <div className="p-4 mx-auto box">
           <Form onSubmit={onSubmitHandler}>
@@ -57,7 +57,7 @@ function LoginScreen() {
               <Form.Group className="mb-3">
                 <Row>
                   <Col md="2">
-                    <Form.Label>Email: </Form.Label>
+                    <Form.Label className="textColor">Email: </Form.Label>
                   </Col>
                   <Col md="10">
                     <Form.Control
@@ -74,7 +74,7 @@ function LoginScreen() {
               <Form.Group className="mb-3">
                 <Row>
                   <Col md="2">
-                    <Form.Label>Password: </Form.Label>
+                    <Form.Label className="textColor">Password: </Form.Label>
                   </Col>
                   <Col md="10">
                     <Form.Control
@@ -89,7 +89,12 @@ function LoginScreen() {
                 </Row>
               </Form.Group>
               <div className="text-center mb-3">
-                <Button variant="outline-primary" size="lg" type="submit">
+                <Button
+                  variant="outline-primary"
+                  size="lg"
+                  type="submit"
+                  className="textColor"
+                >
                   Login
                 </Button>
               </div>
