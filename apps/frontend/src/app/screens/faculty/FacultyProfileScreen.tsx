@@ -1,32 +1,23 @@
 import React from 'react';
-import { Button, Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import Header from '../../components/header/Header';
 
 function FacultyProfileScreen() {
   return (
     <div>
+      <style>{'body { background-color: #dcf7b0; }'}</style>
       <Header page="My Profile" redirect="/faculty/home" />
       <Container>
-        <div className="text-center mb-3">Image</div>
-
-        <div className="d-md-flex justify-content-md-between">
-          <div className="mb-3">First Name: sample</div>
-          <div className="mb-3">Middle Name: sample</div>
-          <div className="mb-3">Last Name: sample</div>
-        </div>
-        <div className="d-md-flex justify-content-md-between">
-          <div className="mb-3">Age: sample</div>
-          <div className="mb-3">Address: sample</div>
-          <div className="mb-3">Birthdate: sample</div>
-        </div>
-        <div className="d-md-flex justify-content-md-between">
-          <div className="mb-3">Birth Place: sample</div>
-          <div className="mb-3">Religion: sample</div>
-          <div className="mb-3">Contact No.: sample</div>
-        </div>
-        <div className="text-center">
-          <Button>Edit</Button>
-        </div>
+        <div className="mb-3">Image</div>
+        <div className="mb-2">Last Name: sample</div>
+        <div className="mb-2">First Name: sample</div>
+        <div className="mb-2">Middle Name: sample</div>
+        <div className="mb-2">Age: sample</div>
+        <div className="mb-2">Address: sample</div>
+        <div className="mb-2">Birthdate: sample</div>
+        <div className="mb-2">Birthplace: sample</div>
+        <div className="mb-2">Religion: sample</div>
+        <div className="mb-2">Contact Number: sample</div>
       </Container>
     </div>
   );

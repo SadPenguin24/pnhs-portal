@@ -30,8 +30,8 @@ import StudentProfileScreen from './screens/student/StudentProfileScreen';
 import FacultyHomeScreen from './screens/faculty/FacultyHomeScreen';
 import FacultyScheduleScreen from './screens/faculty/FacultyScheduleScreen';
 import FacultyProfileScreen from './screens/faculty/FacultyProfileScreen';
-import FacultyGradeScreen from './screens/faculty/FacultyGradeScreen';
-import FacultyClassListScreen from './screens/faculty/FacultyClassListScreen';
+import FacultyAdvisoryClassScreen from './screens/faculty/FacultyAdvisoryClassScreen';
+import FacultyShsGradeScreen from './screens/faculty/FacultyShsGradeScreen';
 
 //css is rough change when finalizing
 export function App() {
@@ -82,10 +82,10 @@ export function App() {
           <Route path="/faculty/home" element={<FacultyHomeScreen />} />
           <Route path="/faculty/schedule" element={<FacultyScheduleScreen />} />
           <Route path="/faculty/profile" element={<FacultyProfileScreen />} />
-          <Route path="/faculty/grademodule" element={<FacultyGradeScreen />} />
+          <Route path="/faculty/shsgrade" element={<FacultyShsGradeScreen />} />
           <Route
-            path="/faculty/classlist"
-            element={<FacultyClassListScreen />}
+            path="/faculty/advisoryclass"
+            element={<FacultyAdvisoryClassScreen />}
           />
 
           {/*Protected Routes */}

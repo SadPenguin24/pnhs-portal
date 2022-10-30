@@ -2,19 +2,22 @@ import React from 'react';
 import { Container, Table } from 'react-bootstrap';
 import Header from '../../components/header/Header';
 
+import '../../components/tables/tables.scss';
+
 function FacultyScheduleScreen() {
   return (
     <div>
+      <style>{'body { background-color: #dcf7b0; }'}</style>
       <Header page="Faculty Schedule" redirect="/faculty/home" />
       <Container>
-        <Table bordered>
-          <thead>
+        <Table bordered className="tableColor">
+          <thead style={{ backgroundColor: '#2867b1' }}>
             <tr className="text-center">
-              <th>Type</th>
-              <th>Subject</th>
-              <th>Day</th>
-              <th>Time</th>
-              <th>Grade/Section/Strand/Track</th>
+              <th className="textWhite">Type</th>
+              <th className="textWhite">Subject</th>
+              <th className="textWhite">Day</th>
+              <th className="textWhite">Time</th>
+              <th className="textWhite">Grade&Section/Strand</th>
             </tr>
           </thead>
           <tbody>
