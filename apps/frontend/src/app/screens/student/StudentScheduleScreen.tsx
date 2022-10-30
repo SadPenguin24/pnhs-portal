@@ -2,9 +2,12 @@ import React from 'react';
 import { Container, Table } from 'react-bootstrap';
 import Header from '../../components/header/Header';
 
+import '../../components/tables/tables.scss';
+
 function StudentScheduleScreen() {
   return (
     <div>
+      <style>{'body { background-color: #dcf7b0; }'}</style>
       <Header page="Schedule / Subjects" redirect="/student/home" />
       <Container>
         <div className="text-center">
@@ -32,7 +35,7 @@ function StudentScheduleScreen() {
           <h4 className="mb-5">
             <strong>Adviser: Janu Gibbs</strong>
           </h4>
-          <Table bordered className="my-3">
+          <Table bordered className="my-3 tableColor">
             <thead>
               <tr
                 className="text-center"

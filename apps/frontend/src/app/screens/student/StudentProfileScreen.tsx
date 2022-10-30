@@ -5,6 +5,7 @@ import Header from '../../components/header/Header';
 function StudentProfileScreen() {
   return (
     <div>
+      <style>{'body { background-color: #dcf7b0; }'}</style>
       <Header page="Student Profile" redirect="/student/home" />
       <Container>
         <div className="text-end my-0">Personal Data / Family / Enrollment</div>
@@ -49,13 +50,9 @@ function StudentProfileScreen() {
         <div className="ms-3">Guardian:</div>
         <div className="mb-3 ms-3">Contact No.:</div>
         <div className="text-center my-3">
-          <Button variant="outline-primary" className="me-4">
-            Save
-          </Button>
-          <Button variant="outline-primary" className="me-4">
-            Exit
-          </Button>
-          <Button variant="outline-primary">Reset</Button>
+          <Button className="me-4">Save</Button>
+          <Button className="me-4">Exit</Button>
+          <Button>Reset</Button>
         </div>
       </Container>
     </div>

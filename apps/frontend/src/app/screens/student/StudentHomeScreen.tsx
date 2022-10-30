@@ -6,6 +6,7 @@ import Header from '../../components/header/Header';
 function StudentHomeScreen() {
   return (
     <>
+      <style>{'body { background-color: #dcf7b0; }'}</style>
       <Header page="Menu" />
       <Container>
         <Row>
