@@ -1,9 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import { Table } from 'react-bootstrap';
 
 import './tables.scss';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function ReportCardTable({ headerColor, sem }: any) {
   return (
     <Table bordered className="tableColor">
@@ -27,6 +27,51 @@ export function ReportCardTable({ headerColor, sem }: any) {
       </thead>
       <tbody>
         <tr>
+          <td>sample</td>
+          <td>sample</td>
+          <td>sample</td>
+          <td>sample</td>
+          <td>sample</td>
+        </tr>
+      </tbody>
+    </Table>
+  );
+}
+
+export function MasterlistTable({ headerColor, student }: any) {
+  return (
+    <Table bordered className="tableColor" responsive="lg">
+      <thead style={{ backgroundColor: headerColor }}>
+        <tr className="text-center">
+          <th className="textWhite">Actions</th>
+          <th className="textWhite">Student No.</th>
+          <th className="textWhite">Last Name</th>
+          <th className="textWhite">First Name</th>
+          <th className="textWhite">Middle Name</th>
+          {student ? (
+            <>
+              <th className="textWhite">Grade Level</th>
+              <th className="textWhite">Age</th>
+            </>
+          ) : (
+            <>
+              <th className="textWhite">Age</th>
+              <th className="textWhite">Address</th>
+            </>
+          )}
+
+          <th className="textWhite">Birthdate</th>
+          <th className="textWhite">Birthplace</th>
+          <th className="textWhite">Contact #</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>sample</td>
+          <td>sample</td>
+          <td>sample</td>
+          <td>sample</td>
+          <td>sample</td>
           <td>sample</td>
           <td>sample</td>
           <td>sample</td>
