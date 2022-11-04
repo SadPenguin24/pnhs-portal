@@ -2,11 +2,11 @@ import React from 'react';
 import { Button, Container } from 'react-bootstrap';
 import Header from '../../components/header/Header';
 
-function AdminStudentProfileScreen() {
+function AdminFacultyProfileScreen() {
   return (
     <div>
       <style>{'body { background-color: #dcf7b0; }'}</style>
-      <Header redirect="/admin/studentlist" />
+      <Header redirect="/admin/facultylist" />
       <Container>
         <div
           className="p-3 mb-5 mx-auto w-75"
@@ -15,13 +15,13 @@ function AdminStudentProfileScreen() {
             border: '1px solid',
           }}
         >
-          <h4 className="mb-5">Create New Student</h4>
+          <h4 className="mb-5">Create New Faculty</h4>
           <div>Student No.:</div>
           <div>Last Name:</div>
           <div>First Name:</div>
           <div>Middle Name:</div>
-          <div>Grade Level:</div>
           <div>Age:</div>
+          <div>Address:</div>
           <div>Birthdate:</div>
           <div>Birthplace:</div>
           <div>Contact Number:</div>
@@ -35,4 +35,4 @@ function AdminStudentProfileScreen() {
   );
 }
 
-export default AdminStudentProfileScreen;
+export default AdminFacultyProfileScreen;
