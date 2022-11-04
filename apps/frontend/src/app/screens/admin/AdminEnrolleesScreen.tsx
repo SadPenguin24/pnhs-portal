@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Container, Table } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import Header from '../../components/header/Header';
 import '../../components/tables/tables.scss';
 
@@ -41,7 +42,9 @@ function AdminEnrolleesScreen() {
           </tbody>
         </Table>
         <div className="text-center">
-          <Button className="me-3">View Subject</Button>
+          <LinkContainer to="/admin/subject">
+            <Button className="me-3">View Subject</Button>
+          </LinkContainer>
           <Button variant="danger">Exit</Button>
         </div>
       </Container>
