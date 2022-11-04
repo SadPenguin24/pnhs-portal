@@ -6,7 +6,7 @@ import './tables.scss';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function ReportCardTable({ headerColor, sem }: any) {
   return (
-    <Table bordered className="my-3 tableColor">
+    <Table bordered className="tableColor">
       <thead>
         <tr className="text-center" style={{ backgroundColor: headerColor }}>
           <th>Subjects</th>

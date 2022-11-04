@@ -13,14 +13,6 @@ import './styles/global.scss';
 
 import AdminHomeScreen from './screens/admin/AdminHomeScreen';
 import AdminProfileScreen from './screens/admin/AdminProfileScreen';
-import AdminEnrollProcessScreen from './screens/admin/AdminEnrollProcessScreen';
-import AdminStudentsList from './screens/admin/AdminStudentsList';
-import AdminStudentProfile from './screens/admin/AdminStudentProfile';
-import AdminFacultyList from './screens/admin/AdminFacultyList';
-import AdminStrandEnrollees from './screens/admin/AdminStrandEnrollees';
-import AdminStrandStudentList from './screens/admin/AdminStrandStudentList';
-import AdminStudentScheduleScreen from './screens/admin/AdminStudentScheduleScreen';
-import AdminFacultySchedule from './screens/admin/AdminFacultySchedule';
 
 import StudentHomeScreen from './screens/student/StudentHomeScreen';
 import StudentEnrollmentScreen from './screens/student/StudentEnrollmentScreen';
@@ -32,6 +24,7 @@ import FacultyScheduleScreen from './screens/faculty/FacultyScheduleScreen';
 import FacultyProfileScreen from './screens/faculty/FacultyProfileScreen';
 import FacultyAdvisoryClassScreen from './screens/faculty/FacultyAdvisoryClassScreen';
 import FacultyShsGradeScreen from './screens/faculty/FacultyShsGradeScreen';
+import AdminStudentRecordsScreen from './screens/admin/AdminStudentRecordsScreen';
 
 //css is rough change when finalizing
 export function App() {
@@ -44,25 +37,9 @@ export function App() {
           {/* Admin Screens */}
           <Route path="/admin/home" element={<AdminHomeScreen />} />
           <Route path="/admin/profile" element={<AdminProfileScreen />} />
-          <Route path="/admin/enroll" element={<AdminEnrollProcessScreen />} />
-          <Route path="/admin/studentlist" element={<AdminStudentsList />} />
-          <Route path="/admin/editstudent" element={<AdminStudentProfile />} />
-          <Route path="/admin/facultylist" element={<AdminFacultyList />} />
           <Route
-            path="/admin/strandenrollees"
-            element={<AdminStrandEnrollees />}
-          />
-          <Route
-            path="/admin/strandstudentlist"
-            element={<AdminStrandStudentList />}
-          />
-          <Route
-            path="/admin/studentschedule"
-            element={<AdminStudentScheduleScreen />}
-          />
-          <Route
-            path="/admin/facultyschedule"
-            element={<AdminFacultySchedule />}
+            path="/admin/studentrecords"
+            element={<AdminStudentRecordsScreen />}
           />
 
           {/* Student Screens */}
