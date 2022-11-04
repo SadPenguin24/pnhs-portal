@@ -29,6 +29,7 @@ import AdminStudentMasterlist from './screens/admin/AdminStudentMasterlist';
 import AdminStudentProfileScreen from './screens/admin/AdminStudentProfileScreen';
 import AdminFacultyMasterlistScreen from './screens/admin/AdminFacultyMasterlistScreen';
 import AdminFacultyProfileScreen from './screens/admin/AdminFacultyProfileScreen';
+import AdminStrandScreen from './screens/admin/AdminStrandScreen';
 
 //css is rough change when finalizing
 export function App() {
@@ -61,6 +62,7 @@ export function App() {
             path="/admin/faculty"
             element={<AdminFacultyProfileScreen />}
           />
+          <Route path="/admin/strand" element={<AdminStrandScreen />} />
 
           {/* Student Screens */}
           <Route path="/student/home" element={<StudentHomeScreen />} />
