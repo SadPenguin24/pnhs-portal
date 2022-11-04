@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Container, Table } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import Header from '../../components/header/Header';
 import '../../components/tables/tables.scss';
 
@@ -20,7 +21,10 @@ function AdminStudentMasterlist() {
           >
             Enter Student Name:
           </div>
-          <Button variant="danger">Create New</Button>
+
+          <LinkContainer to="/admin/student">
+            <Button variant="danger">Create New</Button>
+          </LinkContainer>
         </div>
         <Table bordered className="tableColor" responsive="lg">
           <thead style={{ backgroundColor: '#2a6fd6' }}>
