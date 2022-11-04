@@ -1,5 +1,12 @@
 import React from 'react';
-import { Button, Col, Container, Row, Table } from 'react-bootstrap';
+import {
+  Button,
+  Col,
+  Container,
+  FormControl,
+  Row,
+  Table,
+} from 'react-bootstrap';
 import Header from '../../components/header/Header';
 import '../../components/tables/tables.scss';
 
@@ -10,23 +17,17 @@ function AdminFacultyScheduleScreen() {
       <Header page="Faculty Schedule" redirect="/admin/home" />
       <Container>
         <Row>
-          <Col
-            style={{
-              backgroundColor: '#ffe4a0',
-              border: '#eaaa79 solid',
-            }}
-            className="me-2"
-          >
-            Teacher's Name:
+          <Col>
+            <FormControl
+              style={{ backgroundColor: '#ffe4a0', border: '#eaaa79 solid' }}
+              placeholder="Teacher's Name"
+            ></FormControl>
           </Col>
-          <Col
-            style={{
-              backgroundColor: '#ffe4a0',
-              border: '#eaaa79 solid',
-            }}
-            className="me-2"
-          >
-            S.Y. & Term
+          <Col>
+            <FormControl
+              style={{ backgroundColor: '#ffe4a0', border: '#eaaa79 solid' }}
+              placeholder="S.Y. & Term"
+            ></FormControl>
           </Col>
           <Col className="d-grid gap-2">
             <Button variant="secondary">Load</Button>

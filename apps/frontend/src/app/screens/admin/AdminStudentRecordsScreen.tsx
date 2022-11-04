@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Col, Container, Form, Row } from 'react-bootstrap';
+import { Col, Container, Form, FormControl, Row } from 'react-bootstrap';
 import Header from '../../components/header/Header';
 import { ReportCardTable } from '../../components/tables/Tables';
 import '../../components/tables/tables.scss';
@@ -11,18 +11,13 @@ function AdminStudentRecordsScreen() {
       <style>{'body { background-color: #dcf7b0; }'}</style>
       <Header page="Student Records" redirect="/admin/home" />
       <Container>
-        <div className="d-flex justify-content-md-end mb-3">
-          <div
-            style={{
-              backgroundColor: '#ffe4a0',
-              border: '#eaaa79 solid',
-              width: '500px',
-              height: '40px',
-            }}
-          >
-            Enter Student Name:
-          </div>
+        <div className="w-50 mb-3 ms-auto">
+          <FormControl
+            style={{ backgroundColor: '#ffe4a0', border: '#eaaa79 solid' }}
+            placeholder="Enter Student Name"
+          ></FormControl>
         </div>
+
         <Row className="mb-5">
           <Col md="7">
             <Form>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container } from 'react-bootstrap';
+import { Button, Container, FormControl } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import Header from '../../components/header/Header';
 import { MasterlistTable } from '../../components/tables/Tables';
@@ -10,16 +10,12 @@ function AdminStudentMasterlist() {
       <style>{'body { background-color: #dcf7b0; }'}</style>
       <Header page="Student Masterlist" redirect="/admin/home" />
       <Container>
-        <div className="d-flex justify-content-md-end mb-3">
-          <div
-            style={{
-              backgroundColor: '#ffe4a0',
-              border: '#eaaa79 solid',
-              width: '500px',
-            }}
-            className="me-2"
-          >
-            Enter Student Name:
+        <div className="d-flex justify-content-end mb-3">
+          <div className="w-50 me-3">
+            <FormControl
+              style={{ backgroundColor: '#ffe4a0', border: '#eaaa79 solid' }}
+              placeholder="Enter Student Name"
+            ></FormControl>
           </div>
 
           <LinkContainer to="/admin/student">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Table } from 'react-bootstrap';
+import { Button, Container, FormControl, Table } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import Header from '../../components/header/Header';
 import '../../components/tables/tables.scss';
@@ -11,15 +11,11 @@ function AdminEnrolleesScreen() {
       <Header page="Strand/Enrollees/Subject" redirect="/admin/strand" />
       <Container>
         <div className="d-flex mb-3">
-          <div
-            style={{
-              backgroundColor: '#ffe4a0',
-              border: '#eaaa79 solid',
-              width: '500px',
-            }}
-            className="me-2"
-          >
-            Grade/Section
+          <div className="w-50 me-3">
+            <FormControl
+              style={{ backgroundColor: '#ffe4a0', border: '#eaaa79 solid' }}
+              placeholder="Grade/Section"
+            ></FormControl>
           </div>
           <Button>Search</Button>
         </div>
