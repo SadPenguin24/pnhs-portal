@@ -77,34 +77,39 @@ function AdminStudentRecordsScreen() {
             <Col md="6">
               <Form>
                 <Form.Group as={Row} className="mb-2">
-                  <Form.Label column md={2}>
+                  <Form.Label column lg={2} md={3}>
                     School Year
                   </Form.Label>
-                  <Col md={10}>
+                  <Col lg={10} md={9}>
                     <Form.Control type="text" />
                   </Col>
                 </Form.Group>
+              </Form>
+            </Col>
+            <Col md="6"></Col>
+            <Col md="6">
+              <Form>
                 <Form.Group as={Row} className="mb-2">
-                  <Form.Label column md={2}>
+                  <Form.Label column lg={2} md={3}>
                     Term
                   </Form.Label>
-                  <Col md={10}>
+                  <Col lg={10} md={9}>
                     <Form.Control type="text" />
                   </Col>
                 </Form.Group>
                 <Form.Group as={Row} className="mb-2">
-                  <Form.Label column md={2}>
+                  <Form.Label column lg={2} md={3}>
                     Grade
                   </Form.Label>
-                  <Col md={10}>
+                  <Col lg={10} md={9}>
                     <Form.Control type="text" />
                   </Col>
                 </Form.Group>
                 <Form.Group as={Row} className="mb-2">
-                  <Form.Label column md={2}>
+                  <Form.Label column lg={2} md={3}>
                     Section / Strand
                   </Form.Label>
-                  <Col md={10}>
+                  <Col lg={10} md={9}>
                     <Form.Control type="text" />
                   </Col>
                 </Form.Group>
@@ -113,26 +118,26 @@ function AdminStudentRecordsScreen() {
             <Col md="6">
               <Form>
                 <Form.Group as={Row} className="mb-2">
-                  <Form.Label column md={2}>
+                  <Form.Label column lg={2} md={3}>
                     Term
                   </Form.Label>
-                  <Col md={10}>
+                  <Col lg={10} md={9}>
                     <Form.Control type="text" />
                   </Col>
                 </Form.Group>
                 <Form.Group as={Row} className="mb-2">
-                  <Form.Label column md={2}>
+                  <Form.Label column lg={2} md={3}>
                     Grade
                   </Form.Label>
-                  <Col md={10}>
+                  <Col lg={10} md={9}>
                     <Form.Control type="text" />
                   </Col>
                 </Form.Group>
                 <Form.Group as={Row} className="mb-2">
-                  <Form.Label column md={2}>
+                  <Form.Label column lg={2} md={3}>
                     Section / Strand
                   </Form.Label>
-                  <Col md={10}>
+                  <Col lg={10} md={9}>
                     <Form.Control type="text" />
                   </Col>
                 </Form.Group>

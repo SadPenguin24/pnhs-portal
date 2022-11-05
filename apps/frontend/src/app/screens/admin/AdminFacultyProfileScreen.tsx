@@ -15,7 +15,7 @@ function AdminFacultyProfileScreen() {
             border: '1px solid',
           }}
         >
-          <h4 className="mb-5">Create New Faculty</h4>
+          <h4 className="mb-5">Faculty</h4>
           <div>Student No.:</div>
           <div>Last Name:</div>
           <div>First Name:</div>

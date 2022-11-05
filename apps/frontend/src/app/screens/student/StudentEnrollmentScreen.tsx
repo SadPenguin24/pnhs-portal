@@ -19,13 +19,6 @@ function StudentEnrollmentScreen() {
       <style>{'body { background-color: #dcf7b0; }'}</style>
       <Header page="Enrollment / Registration" redirect="/student/home" />
       <Container>
-        <div className="mb-2">
-          <FormControl
-            className="ms-auto"
-            style={{ width: '50%' }}
-            placeholder="Search Student Name"
-          ></FormControl>
-        </div>
         <div className="mb-2">Student No.:</div>
         <div className="mb-2">Name:</div>
         <div className="mb-2">School Year:</div>

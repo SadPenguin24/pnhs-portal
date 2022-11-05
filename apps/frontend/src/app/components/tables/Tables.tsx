@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import { Table } from 'react-bootstrap';
+import { Button, Table } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 import './tables.scss';
 
@@ -67,7 +68,17 @@ export function MasterlistTable({ headerColor, student }: any) {
       </thead>
       <tbody>
         <tr>
-          <td>sample</td>
+          <td>
+            {student ? (
+              <LinkContainer to="/admin/student">
+                <Button>View Student</Button>
+              </LinkContainer>
+            ) : (
+              <LinkContainer to="/admin/faculty">
+                <Button>View Faculty</Button>
+              </LinkContainer>
+            )}
+          </td>
           <td>sample</td>
           <td>sample</td>
           <td>sample</td>

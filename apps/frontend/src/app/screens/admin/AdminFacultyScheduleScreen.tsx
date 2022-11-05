@@ -36,7 +36,8 @@ function AdminFacultyScheduleScreen() {
         <div className="text-end my-3">
           <Button className="me-5">Add</Button>
           <Button className="me-5">Edit</Button>
-          <Button>Save</Button>
+          <Button className="me-5">Save</Button>
+          <Button variant="danger">Delete</Button>
         </div>
         <Table bordered className="tableColor">
           <thead>

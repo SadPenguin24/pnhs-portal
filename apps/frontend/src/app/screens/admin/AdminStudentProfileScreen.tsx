@@ -15,7 +15,7 @@ function AdminStudentProfileScreen() {
             border: '1px solid',
           }}
         >
-          <h4 className="mb-5">Create New Student</h4>
+          <h4 className="mb-5">Student</h4>
           <div>Student No.:</div>
           <div>Last Name:</div>
           <div>First Name:</div>

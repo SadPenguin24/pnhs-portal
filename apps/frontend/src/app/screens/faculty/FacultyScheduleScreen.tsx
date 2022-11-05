@@ -10,7 +10,7 @@ function FacultyScheduleScreen() {
       <style>{'body { background-color: #dcf7b0; }'}</style>
       <Header page="Faculty Schedule" redirect="/faculty/home" />
       <Container>
-        <Table bordered className="tableColor">
+        <Table bordered className="tableColor" responsive="sm">
           <thead style={{ backgroundColor: '#2867b1' }}>
             <tr className="text-center">
               <th className="textWhite">Type</th>
