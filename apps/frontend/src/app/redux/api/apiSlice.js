@@ -2,8 +2,12 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { setCredentials, logOut } from '../slice/authSlice';
 import { getCookie } from 'cookies-next';
 
+const port = process.env.NODE_ENV === "local" ?
+  "http://112.201.131.247:3333"
+  : process.env.PORT;
+
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'http://112.201.131.247:3333/api/',
+  baseUrl: `${port}/api/`,
   credentials: 'include',
   prepareHeaders: (headers, { getState }) => {
     const token = getCookie("access_token");
