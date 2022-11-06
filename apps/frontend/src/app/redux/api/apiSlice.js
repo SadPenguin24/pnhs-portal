@@ -3,7 +3,7 @@ import { setCredentials, logOut } from '../slice/authSlice';
 import { getCookie } from 'cookies-next';
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'http://localhost:3333/api/',
+  baseUrl: 'http://112.201.131.247:3333/api/',
   credentials: 'include',
   prepareHeaders: (headers, { getState }) => {
     const token = getCookie("access_token");

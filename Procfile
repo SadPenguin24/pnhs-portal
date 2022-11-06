@@ -1,1 +1,1 @@
-web: npm run start:prod
+web: node apps/api/src/main.ts

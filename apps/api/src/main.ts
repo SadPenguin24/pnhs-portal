@@ -17,7 +17,7 @@ async function bootstrap() {
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
   //change origin in prod
-  app.enableCors({ credentials: true, origin: 'http://localhost:4200' });
+  app.enableCors({ credentials: true, origin: 'http://112.201.131.247:4200' });
   const port = process.env.PORT || 3333;
   await app.listen(port);
   Logger.log(

@@ -10,10 +10,8 @@
     "dev": "concurrently \"npm run start\" \"npm run client\"",
     "build": "nx build",
     "test": "nx test",
-    "prestart:prod": "rimraf dist && npm run build",
-    "postinstall": "npm run prestart:prod",
-    "start:prod": "node dist/main.js",
-    "heroku-postbuild": "echo Skip builds on Heroku"
+    "deploy": "cp -a apps/frontend/build/. public/",
+    "heroku-postbuild": "npm run build && npm run deploy"
   },
   "private": true,
   "dependencies": {

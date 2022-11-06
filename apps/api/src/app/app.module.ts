@@ -14,7 +14,7 @@ import { UsersModule } from './users/users.module';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'build'),
+      rootPath: join(__dirname, '../../../../', 'apps/frontend/build'),
     }),
     MongooseModule.forRootAsync({
       useFactory: async () => ({
