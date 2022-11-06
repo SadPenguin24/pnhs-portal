@@ -9,7 +9,6 @@
     "client": "nx serve frontend",
     "dev": "tsc && node /../dist/apps/api/main.js",
     "start": "node dist/apps/api/main.js",
-    "postinstall": "tsc",
     "watch-node": "nodemon dist/apps/api/main.js",
     "watch-ts": "tsc -w",
     "build": "nx build api && nx build frontend",
