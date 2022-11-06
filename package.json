@@ -8,10 +8,9 @@
     "start": "nx serve api",
     "client": "nx serve frontend",
     "dev": "concurrently \"npm run start\" \"npm run client\"",
-    "build": "nx build",
+    "build": "nx build api && nx build frontend",
     "test": "nx test",
-    "deploy": "cp -a apps/frontend/build/. public/",
-    "heroku-postbuild": "npm run build && npm run deploy"
+    "heroku-postbuild": "npm run build"
   },
   "private": true,
   "dependencies": {
