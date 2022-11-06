@@ -11,7 +11,7 @@ const authSlice = createSlice({
     },
     logOut: (state, action) => {
       state.user = null;
-      deleteCookie("access_token");
+      deleteCookie('access_token');
     },
   },
 });
@@ -20,5 +20,4 @@ export const { setCredentials, logOut } = authSlice.actions;
 
 export default authSlice.reducer;
 
-export const selectCurrentUser = (state) =>
-  state.auth.user;
+export const selectCurrentUser = (state) => state.auth.user;

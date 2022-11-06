@@ -1,14 +1,30 @@
 
 $family-sans-serif: "Arial", sans-serif;
 * {
+  margin: 0;
   font-family: $family-sans-serif;
+  color: black;
 }
 
-.container {
-  max-width: max-content;
-  max-height: max-content;
-
+body {
+  background-color: #dcf7b0;
 }
+
+.clickable:hover {
+cursor: pointer;
+}
+
+$primary: #66da43;
+$secondary: #377bff;
+$danger: #ff0817;
+
+@import "bootstrap";
+
+// .container {
+//   max-width: max-content;
+//   max-height: max-content;
+
+// }
 
 
 

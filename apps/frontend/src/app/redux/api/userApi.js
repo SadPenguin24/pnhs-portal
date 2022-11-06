@@ -1,11 +1,11 @@
 import { apiSlice } from './apiSlice';
 
 export const userApi = apiSlice.injectEndpoints({
-  endpoints: builder => ({
+  endpoints: (builder) => ({
     getProfile: builder.query({
-          query: () => "/user/profile"
-      })
-  })
-})
+      query: () => '/user/profile',
+    }),
+  }),
+});
 
-export const {useGetProfileQuery}= userApi
+export const { useGetProfileQuery } = userApi;
