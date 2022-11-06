@@ -1,12 +1,22 @@
 import React from 'react';
+import { deleteCookie } from 'cookies-next';
 import { Col, Container, Image, Nav, Navbar, Row } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 import './header.scss';
+import { useNavigate } from 'react-router-dom';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function Header({ page, redirect }: any) {
   const role = window.location.pathname.split('/');
+
+  const navigate = useNavigate();
+
+  const logoutHandler = () => {
+    deleteCookie('access_token');
+
+    navigate('/');
+  };
 
   return (
     <div className="mb-5">
@@ -60,7 +70,9 @@ function Header({ page, redirect }: any) {
                     <strong>Menu</strong>
                   </Navbar.Brand>
                   <Navbar.Brand>
-                    <div>Logout</div>
+                    <div className="clickable" onClick={logoutHandler}>
+                      Logout
+                    </div>
                   </Navbar.Brand>
                 </>
               ) : (
@@ -88,7 +100,9 @@ function Header({ page, redirect }: any) {
                     <strong>{page}</strong>
                   </Navbar.Brand>
                   <Navbar.Brand>
-                    <div>Logout</div>
+                    <div className="clickable" onClick={logoutHandler}>
+                      Logout
+                    </div>
                   </Navbar.Brand>
                 </>
               )}
