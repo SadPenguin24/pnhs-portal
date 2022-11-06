@@ -25,7 +25,7 @@ AppModule = tslib_1.__decorate([
     (0, common_1.Module)({
         imports: [
             serve_static_1.ServeStaticModule.forRoot({
-                rootPath: (0, path_1.join)(__dirname, '../../../../', 'apps/frontend/build'),
+                rootPath: (0, path_1.join)(__dirname, '../../../../', 'dist/apps/frontend'),
             }),
             mongoose_1.MongooseModule.forRootAsync({
                 useFactory: () => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
@@ -1707,9 +1707,8 @@ function bootstrap() {
         const globalPrefix = 'api';
         app.setGlobalPrefix(globalPrefix);
         //change origin in prod
-        app.enableCors({ credentials: true, origin: 'http://112.201.131.247:4200' });
         const port = process.env.PORT || 3333;
-        yield app.listen(port);
+        yield app.listen((process.env.PORT, parseInt('0.0.0.0')) || 3000);
         common_1.Logger.log(`🚀 Application is running on: http://localhost:${port}/${globalPrefix}`);
     });
 }

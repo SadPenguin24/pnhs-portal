@@ -9,6 +9,7 @@
     "client": "nx serve frontend",
     "dev": "concurrently \"npm run start\" \"npm run client\"",
     "build": "nx build api && nx build frontend",
+    "start:prod": "NODE_ENV=production node dist/apps/api/main",
     "test": "nx test",
     "heroku-postbuild": "npm run build"
   },
