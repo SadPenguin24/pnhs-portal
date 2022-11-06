@@ -7,7 +7,8 @@
     "css-watch": "npm run css-build -- --watch",
     "start": "nx serve css-watch",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "heroku-postbuild": "echo Skip builds on Heroku"
   },
   "private": true,
   "dependencies": {
