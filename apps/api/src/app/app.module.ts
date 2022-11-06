@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 
 import { MongooseModule } from '@nestjs/mongoose';
+import { join } from 'path';
 import { ServeStaticModule } from '@nestjs/serve-static';
 
 //modules
