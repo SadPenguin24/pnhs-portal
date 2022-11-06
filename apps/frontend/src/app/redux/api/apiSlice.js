@@ -4,7 +4,7 @@ import { getCookie } from 'cookies-next';
 
 const port = process.env.NODE_ENV === "local" ?
   "http://112.201.131.247:3333"
-  : `https://pnhs-portal.herokuapp.com/${process.env.PORT}`;
+  : `https://pnhs-portal.herokuapp.com/`;
 
 const baseQuery = fetchBaseQuery({
   baseUrl: `${port}/api/`,
