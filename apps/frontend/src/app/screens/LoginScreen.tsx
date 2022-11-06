@@ -30,7 +30,14 @@ function LoginScreen() {
 
       setEmail('');
       setPassword('');
-      navigate('/');
+
+      if (user.role[0] === 'admin') {
+        navigate('/admin/home');
+      } else if (user.role[0] === 'faculty') {
+        navigate('/faculty/home');
+      } else if (user.role[0] === 'student') {
+        navigate('/student/home');
+      }
     } catch (error) {
       console.log(error);
     }
