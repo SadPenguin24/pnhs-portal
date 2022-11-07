@@ -5,13 +5,18 @@ import { LinkContainer } from 'react-router-bootstrap';
 import '../../styles/adminHome.scss';
 
 import Header from '../../components/header/Header';
+import { Link } from 'react-router-dom';
+import sameRole from '../../utilities/sameRole';
 
 function AdminHomeScreen() {
+  // sameRole();
+
   return (
     <>
       <style>{'body { background-color: #dcf7b0; }'}</style>
       <Header page="Menu" />
       <Container>
+        <Link to="/profile">Profile</Link>
         <Row>
           <LinkContainer to="/admin/profile">
             <Col lg="3" md="4" xs="6" className="text-center mb-3 clickable">

@@ -1,19 +1,21 @@
 import React from 'react';
-import { deleteCookie } from 'cookies-next';
 import { Col, Container, Image, Nav, Navbar, Row } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 import './header.scss';
 import { useNavigate } from 'react-router-dom';
+import { useAppDispatch } from '../../redux/store';
+import { logOut } from '../../redux/slice/authSlice';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function Header({ page, redirect }: any) {
   const role = window.location.pathname.split('/');
 
+  const dispatch = useAppDispatch;
   const navigate = useNavigate();
 
   const logoutHandler = () => {
-    deleteCookie('access_token');
+    // dispatch(logOut({}));
 
     navigate('/');
   };
@@ -113,4 +115,5 @@ function Header({ page, redirect }: any) {
     </div>
   );
 }
+
 export default Header;

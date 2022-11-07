@@ -4,12 +4,16 @@ import { Route, Routes } from 'react-router-dom';
 
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 import Layout from './redux/screens/Layout';
 import RequireAuth from './redux/screens/RequireAuth';
+
 import './styles/global.scss';
+
 import AdminHomeScreen from './screens/admin/AdminHomeScreen';
 import AdminProfileScreen from './screens/admin/AdminProfileScreen';
+
 import StudentHomeScreen from './screens/student/StudentHomeScreen';
 import StudentEnrollmentScreen from './screens/student/StudentEnrollmentScreen';
 import StudentReportCardScreen from './screens/student/StudentReportCardScreen';
@@ -31,6 +35,7 @@ import AdminSubjectScreen from './screens/admin/AdminSubjectScreen';
 import AdminFacultyScheduleScreen from './screens/admin/AdminFacultyScheduleScreen';
 import AdminStudentScheduleScreen from './screens/admin/AdminStudentScheduleScreen';
 import AdminStudentEnrolledlist from './screens/admin/AdminStudentEnrolledlist';
+
 //css is rough change when finalizing
 export function App() {
   return (
@@ -38,6 +43,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<LoginScreen />} />
+          <Route path="/profile" element={<ProfileScreen />} />
 
           {/*Protected Routes */}
           <Route element={<RequireAuth />}>
@@ -118,4 +124,5 @@ export function App() {
     </div>
   );
 }
+
 export default App;

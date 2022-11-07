@@ -2,8 +2,18 @@ import React from 'react';
 import { Container, FormControl } from 'react-bootstrap';
 import Header from '../../components/header/Header';
 import { MasterlistTable } from '../../components/tables/Tables';
+import { useGetAllProfileQuery } from '../../redux/api/userApi';
 
 function AdminStudentMasterlist() {
+  const {
+    data: users,
+    isLoading,
+    isSuccess,
+    isError,
+    error,
+  } = useGetAllProfileQuery({});
+
+  console.log(users);
   return (
     <div>
       <style>{'body { background-color: #dcf7b0; }'}</style>
