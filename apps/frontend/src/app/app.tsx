@@ -4,16 +4,12 @@ import { Route, Routes } from 'react-router-dom';
 
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
-import ProfileScreen from './screens/ProfileScreen';
 
 import Layout from './redux/screens/Layout';
 import RequireAuth from './redux/screens/RequireAuth';
-
 import './styles/global.scss';
-
 import AdminHomeScreen from './screens/admin/AdminHomeScreen';
 import AdminProfileScreen from './screens/admin/AdminProfileScreen';
-
 import StudentHomeScreen from './screens/student/StudentHomeScreen';
 import StudentEnrollmentScreen from './screens/student/StudentEnrollmentScreen';
 import StudentReportCardScreen from './screens/student/StudentReportCardScreen';
@@ -35,86 +31,91 @@ import AdminSubjectScreen from './screens/admin/AdminSubjectScreen';
 import AdminFacultyScheduleScreen from './screens/admin/AdminFacultyScheduleScreen';
 import AdminStudentScheduleScreen from './screens/admin/AdminStudentScheduleScreen';
 import AdminStudentEnrolledlist from './screens/admin/AdminStudentEnrolledlist';
-
 //css is rough change when finalizing
 export function App() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/login" element={<LoginScreen />} />
-
-          {/* Admin Screens */}
-          <Route path="/admin/home" element={<AdminHomeScreen />} />
-          <Route path="/admin/profile" element={<AdminProfileScreen />} />
-          <Route
-            path="/admin/studentrecords"
-            element={<AdminStudentRecordsScreen />}
-          />
-          <Route
-            path="/admin/studentlist"
-            element={<AdminStudentMasterlist />}
-          />
-          <Route
-            path="/admin/student"
-            element={<AdminStudentProfileScreen />}
-          />
-          <Route
-            path="/admin/facultylist"
-            element={<AdminFacultyMasterlistScreen />}
-          />
-          <Route
-            path="/admin/faculty"
-            element={<AdminFacultyProfileScreen />}
-          />
-          <Route path="/admin/strand" element={<AdminStrandScreen />} />
-          <Route path="/admin/enrollees" element={<AdminEnrolleesScreen />} />
-          <Route path="/admin/subject" element={<AdminSubjectScreen />} />
-          <Route
-            path="/admin/facultyschedule"
-            element={<AdminFacultyScheduleScreen />}
-          />
-          <Route
-            path="/admin/studentschedule"
-            element={<AdminStudentScheduleScreen />}
-          />
-          <Route
-            path="/admin/enrolledlist"
-            element={<AdminStudentEnrolledlist />}
-          />
-
-          {/* Student Screens */}
-          <Route path="/student/home" element={<StudentHomeScreen />} />
-          <Route
-            path="/student/enrollment"
-            element={<StudentEnrollmentScreen />}
-          />
-          <Route
-            path="/student/reportcard"
-            element={<StudentReportCardScreen />}
-          />
-          <Route path="/student/schedule" element={<StudentScheduleScreen />} />
-          <Route path="/student/profile" element={<StudentProfileScreen />} />
-
-          {/* Faculty Screens */}
-          <Route path="/faculty/home" element={<FacultyHomeScreen />} />
-          <Route path="/faculty/schedule" element={<FacultyScheduleScreen />} />
-          <Route path="/faculty/profile" element={<FacultyProfileScreen />} />
-          <Route path="/faculty/shsgrade" element={<FacultyShsGradeScreen />} />
-          <Route
-            path="/faculty/advisoryclass"
-            element={<FacultyAdvisoryClassScreen />}
-          />
+          <Route index element={<LoginScreen />} />
 
           {/*Protected Routes */}
           <Route element={<RequireAuth />}>
+            {/* Admin Screens */}
+            <Route path="/admin/home" element={<AdminHomeScreen />} />
+            <Route path="/admin/profile" element={<AdminProfileScreen />} />
+            <Route
+              path="/admin/studentrecords"
+              element={<AdminStudentRecordsScreen />}
+            />
+            <Route
+              path="/admin/studentlist"
+              element={<AdminStudentMasterlist />}
+            />
+            <Route
+              path="/admin/student"
+              element={<AdminStudentProfileScreen />}
+            />
+            <Route
+              path="/admin/facultylist"
+              element={<AdminFacultyMasterlistScreen />}
+            />
+            <Route
+              path="/admin/faculty"
+              element={<AdminFacultyProfileScreen />}
+            />
+            <Route path="/admin/strand" element={<AdminStrandScreen />} />
+            <Route path="/admin/enrollees" element={<AdminEnrolleesScreen />} />
+            <Route path="/admin/subject" element={<AdminSubjectScreen />} />
+            <Route
+              path="/admin/facultyschedule"
+              element={<AdminFacultyScheduleScreen />}
+            />
+            <Route
+              path="/admin/studentschedule"
+              element={<AdminStudentScheduleScreen />}
+            />
+            <Route
+              path="/admin/enrolledlist"
+              element={<AdminStudentEnrolledlist />}
+            />
+
+            {/* Student Screens */}
+            <Route path="/student/home" element={<StudentHomeScreen />} />
+            <Route
+              path="/student/enrollment"
+              element={<StudentEnrollmentScreen />}
+            />
+            <Route
+              path="/student/reportcard"
+              element={<StudentReportCardScreen />}
+            />
+            <Route
+              path="/student/schedule"
+              element={<StudentScheduleScreen />}
+            />
+            <Route path="/student/profile" element={<StudentProfileScreen />} />
+
+            {/* Faculty Screens */}
+            <Route path="/faculty/home" element={<FacultyHomeScreen />} />
+            <Route
+              path="/faculty/schedule"
+              element={<FacultyScheduleScreen />}
+            />
+            <Route path="/faculty/profile" element={<FacultyProfileScreen />} />
+            <Route
+              path="/faculty/shsgrade"
+              element={<FacultyShsGradeScreen />}
+            />
+            <Route
+              path="/faculty/advisoryclass"
+              element={<FacultyAdvisoryClassScreen />}
+            />
             <Route path="/register" element={<RegisterScreen />} />
-            <Route index element={<ProfileScreen />} />
           </Route>
         </Route>
       </Routes>
     </div>
   );
 }
-
 export default App;
