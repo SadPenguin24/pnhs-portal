@@ -4,18 +4,17 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 import './header.scss';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch } from '../../redux/store';
-import { logOut } from '../../redux/slice/authSlice';
+import { deleteCookie } from 'cookies-next';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function Header({ page, redirect }: any) {
   const role = window.location.pathname.split('/');
 
-  const dispatch = useAppDispatch;
   const navigate = useNavigate();
 
   const logoutHandler = () => {
     // dispatch(logOut({}));
+    deleteCookie('access_token');
 
     navigate('/');
   };

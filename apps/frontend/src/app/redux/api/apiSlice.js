@@ -6,7 +6,7 @@ const baseQuery = fetchBaseQuery({
   baseUrl: 'http://localhost:3333/api/',
   credentials: 'include',
   prepareHeaders: (headers, { getState }) => {
-    const token = getCookie("access_token");
+    const token = getCookie('access_token');
     if (token) {
       headers.set('authorization', `Bearer ${token}`);
     }
