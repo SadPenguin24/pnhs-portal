@@ -4,7 +4,6 @@ import { Route, Routes } from 'react-router-dom';
 
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
-import ProfileScreen from './screens/ProfileScreen';
 
 import Layout from './redux/screens/Layout';
 import RequireAuth from './redux/screens/RequireAuth';
@@ -43,7 +42,6 @@ export function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<LoginScreen />} />
-          <Route path="/profile" element={<ProfileScreen />} />
 
           {/*Protected Routes */}
           <Route element={<RequireAuth />}>
