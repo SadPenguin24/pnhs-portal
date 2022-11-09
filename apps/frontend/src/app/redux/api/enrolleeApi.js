@@ -2,6 +2,9 @@ import { apiSlice } from './apiSlice';
 
 export const enrolleeApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
+    getEnrollees: builder.query({
+      query: () => '/enrollee/',
+    }),
     createEnrollee: builder.mutation({
       query: (credentials) => ({
         url: '/enrollee/create',
@@ -12,4 +15,4 @@ export const enrolleeApi = apiSlice.injectEndpoints({
   }),
 });
 
-export const { useCreateEnrolleeMutation } = enrolleeApi;
+export const { useGetEnrolleesQuery, useCreateEnrolleeMutation } = enrolleeApi;

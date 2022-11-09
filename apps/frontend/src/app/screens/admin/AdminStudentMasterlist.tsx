@@ -40,7 +40,7 @@ function AdminStudentMasterlist() {
   if (isLoading) {
     content = (
       <div className="text-center">
-        <Spinner animation="border" role="status">
+        <Spinner variant="primary" animation="border" role="status">
           <span className="visually-hidden">Loading...</span>
         </Spinner>
       </div>
